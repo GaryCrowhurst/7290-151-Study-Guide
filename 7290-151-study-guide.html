@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7290-151 Study Guide | Routine Light Vehicle Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        /* Header - Mobile First */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Tabs - Mobile Optimized */
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-tab {
+            padding: 14px 18px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            touch-action: manipulation;
+        }
+
+        .nav-tab:active {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            color: #2a5298;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+
+        /* Content Area - Mobile First */
+        .content {
+            padding: 15px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Search Box - Touch Friendly */
+        .search-box {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px; /* Prevents zoom on iOS */
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .section-header {
+            color: #2a5298;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        /* Flashcards - Mobile Optimized */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flashcard {
+            height: 180px;
+            perspective: 1000px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .flashcard-back {
+            background: white;
+            border: 2px solid #667eea;
+            transform: rotateY(180deg);
+            font-size: 0.9rem;
+            color: #2c3e50;
+            overflow-y: auto;
+        }
+
+        /* Info Cards - Mobile Friendly */
+        .info-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-card h4 {
+            color: #2a5298;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        /* Procedure Cards - Touch Optimized */
+        .procedure-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .procedure-card h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .procedure-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 12px;
+            padding-left: 40px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* System Cards */
+        .system-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .system-card h4 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .system-card p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .system-checks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .check-item {
+            background: #f8f9fa;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .check-item::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Warning, Safety, Tip Boxes - Mobile Optimized */
+        .warning-box, .safety-box, .tip-box {
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .warning-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .safety-box {
+            background: #f8d7da;
+            border-left-color: #dc3545;
+        }
+
+        .safety-box strong {
+            color: #721c24;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left-color: #17a2b8;
+        }
+
+        .tip-box strong {
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Accordion - Touch Friendly */
+        .accordion {
+            margin-bottom: 10px;
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 14px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+            min-height: 48px;
+            touch-action: manipulation;
+            font-size: 0.95rem;
+        }
+
+        .accordion-header:active {
+            background: #e9ecef;
+        }
+
+        .accordion-header.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0;
+        }
+
+        .accordion-content.active {
+            max-height: 3000px;
+            padding: 15px 0;
+        }
+
+        /* Quick Reference Grid - Mobile First */
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .quick-ref-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .quick-ref-card h4 {
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .quick-ref-card p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* Tables - Mobile Scrollable */
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 600px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.9rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Tablet Styles (min-width: 600px) */
+        @media (min-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .flashcard-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .flashcard {
+                height: 200px;
+            }
+
+            .system-checks {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .nav-tab {
+                padding: 15px 20px;
+            }
+        }
+
+        /* Desktop Styles (min-width: 900px) */
+        @media (min-width: 900px) {
+            body {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .section-header {
+                font-size: 1.5rem;
+            }
+
+            .flashcard-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .system-checks {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .nav-tab {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            .nav-tab:hover {
+                background: #e9ecef;
+            }
+
+            .procedure-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            }
+
+            .accordion-header:hover {
+                background: #e9ecef;
+            }
+
+            table {
+                min-width: 100%;
+            }
+        }
+
+        /* Large Desktop (min-width: 1200px) */
+        @media (min-width: 1200px) {
+            .flashcard-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Unit 7290-151 Study Guide</h1>
+            <p>Knowledge of Routine Light Vehicle Maintenance - Interactive Learning Resource</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">📋 Overview</button>
+            <button class="nav-tab" onclick="showTab('flashcards')">🎴 Flashcards</button>
+            <button class="nav-tab" onclick="showTab('procedures')">🔧 Procedures</button>
+            <button class="nav-tab" onclick="showTab('systems')">⚙️ Systems</button>
+            <button class="nav-tab" onclick="showTab('safety')">⚠️ Safety</button>
+            <button class="nav-tab" onclick="showTab('quick-ref')">📖 Quick Reference</button>
+        </div>
+
+        <div class="content">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <h2 class="section-header">Unit Overview</h2>
+                
+                <div class="info-card">
+                    <h3>🎯 Unit Details</h3>
+                    <p><strong>Unit Number:</strong> 7290-151</p>
+                    <p><strong>Level:</strong> Level 2</p>
+                    <p><strong>GLH:</strong> 20 hours</p>
+                    <p><strong>Assessment:</strong> Multiple choice test (Evolve)</p>
+                    <p><strong>Grading:</strong> Pass/Merit/Distinction</p>
+                    <ul>
+                        <li><strong>Pass:</strong> 65% or above</li>
+                        <li><strong>Merit:</strong> 75% or above</li>
+                        <li><strong>Distinction:</strong> 85% or above</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📚 What You'll Learn</h3>
+                    <p>This unit develops your understanding of conducting routine maintenance, adjustment, and replacement activities as part of periodic servicing of light vehicles.</p>
+                    <ul>
+                        <li>Safe working practices during routine maintenance</li>
+                        <li>Inspection techniques and assessment methods</li>
+                        <li>Vehicle systems identification and checking procedures</li>
+                        <li>Fluid and lubricant management</li>
+                        <li>Technical information interpretation</li>
+                        <li>Legal requirements and documentation</li>
+                        <li>Hybrid/electric vehicle considerations</li>
+                        <li>Advanced driver assistance systems (ADAS)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎓 Assessment Criteria Coverage</h3>
+                    <p><strong>Learning Outcome 1:</strong> Understand how to carry out routine light vehicle maintenance</p>
+                    <ul>
+                        <li>1.1 - Safe working practices</li>
+                        <li>1.2 - Conducting scheduled maintenance</li>
+                        <li>1.3 - Assessment methods for conformity</li>
+                        <li>1.4 - Systems to inspect</li>
+                        <li>1.5-1.7 - Technical information sources</li>
+                        <li>1.8 - Hybrid/electric vehicle maintenance</li>
+                        <li>1.9-1.14 - Adjustments and procedures</li>
+                        <li>1.15-1.17 - Reporting and specifications</li>
+                    </ul>
+                    <p><strong>Learning Outcome 2:</strong> Understand the importance of carrying out light vehicle maintenance</p>
+                    <ul>
+                        <li>2.1 - Legal requirements</li>
+                        <li>2.2 - Work-based policies</li>
+                        <li>2.3 - Manufacturers' warranty requirements</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <strong>💡 Study Tips</strong>
+                    <p>Use all sections of this guide alongside the practice quiz. Start with flashcards to learn key terms, then study the procedures and systems in detail. Refer to the quick reference section for fast revision before your assessment.</p>
+                </div>
+            </div>
+
+            <!-- Flashcards Tab -->
+            <div id="flashcards" class="tab-content">
+                <h2 class="section-header">Interactive Flashcards</h2>
+                <p style="margin-bottom: 20px;">Click any card to flip and reveal the answer. Master these key concepts!</p>
+
+                <input type="text" class="search-box" id="flashcardSearch" placeholder="🔍 Search flashcards..." onkeyup="filterFlashcards()">
+
+                <div class="flashcard-container" id="flashcardContainer">
+                    <!-- Flashcards will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Procedures Tab -->
+            <div id="procedures" class="tab-content">
+                <h2 class="section-header">Maintenance Procedures</h2>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">🛢️</span>Engine Oil Check & Change Procedure</h3>
+                    <ol class="step-list">
+                        <li>Park vehicle on level ground and apply handbrake</li>
+                        <li>Allow engine to cool (if recently run)</li>
+                        <li>Locate dipstick and check current oil level</li>
+                        <li>Assess oil condition (color, contamination)</li>
+                        <li>Identify correct oil grade from technical information</li>
+                        <li>Position drain pan under sump plug</li>
+                        <li>Remove sump plug and drain old oil completely</li>
+                        <li>Replace sump plug with new washer (torque to specification)</li>
+                        <li>Replace oil filter (prime new filter with clean oil)</li>
+                        <li>Refill with correct grade oil to specified level</li>
+                        <li>Run engine briefly and recheck level</li>
+                        <li>Dispose of old oil and filter according to regulations</li>
+                        <li>Record service in vehicle documentation</li>
+                    </ol>
+                    <div class="warning-box">
+                        <strong>⚠️ Important</strong>
+                        Using incorrect oil grade can cause serious engine damage, increased wear, and voiding of warranties.
+                    </div>
+                </div>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">💧</span>Coolant System Check Procedure</h3>
+                    <ol class="step-list">
+                        <li>Ensure engine is completely cold before opening system</li>
+                        <li>Check coolant level in expansion/header tank</li>
+                        <li>Visually inspect for leaks at hoses, connections, radiator</li>
+                        <li>Check condition of coolant (color, contamination)</li>
+                        <li>Test antifreeze concentration with hydrometer/tester</li>
+                        <li>Inspect pressure cap condition and seal</li>
+                        <li>Check radiator fins for damage or blockage</li>
+                        <li>Test cooling fan operation (manual and automatic)</li>
+                        <li>Pressure test system if leaks suspected</li>
+                        <li>Top up with correct coolant mixture if required</li>
+                        <li>Test for combustion gases in coolant (head gasket check)</li>
+                    </ol>
+                    <div class="safety-box">
+                        <strong>🚨 SAFETY WARNING</strong>
+                        NEVER remove pressure cap from hot cooling system. Pressurized hot coolant can cause severe burns. Always wait until engine is cold.
+                    </div>
+                </div>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">🔋</span>Battery & Electrical System Check</h3>
+                    <ol class="step-list">
+                        <li>Switch off all electrical consumers</li>
+                        <li>Inspect battery terminals for corrosion</li>
+                        <li>Check terminal connections are secure</li>
+                        <li>Test battery voltage with multimeter (12.6V+ when fully charged)</li>
+                        <li>Perform load test if battery age/condition uncertain</li>
+                        <li>Check alternator charging voltage (13.8-14.4V typically)</li>
+                        <li>Inspect drive belt condition and tension</li>
+                        <li>Test all lighting systems (headlights, indicators, brake lights)</li>
+                        <li>Check operation of wipers and washers</li>
+                        <li>Verify warning lights function correctly</li>
+                        <li>Test horn operation</li>
+                        <li>Check fuse box for blown fuses or damage</li>
+                    </ol>
+                </div>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">🛞</span>Tyre & Wheel Inspection Procedure</h3>
+                    <ol class="step-list">
+                        <li>Check tyre pressures (cold) against manufacturer specification</li>
+                        <li>Measure tread depth at multiple points (min 1.6mm legal)</li>
+                        <li>Inspect for cuts, bulges, cracks, or damage</li>
+                        <li>Check for uneven wear patterns (indicates alignment/suspension issues)</li>
+                        <li>Inspect sidewalls for damage or age deterioration</li>
+                        <li>Check valve condition and operation</li>
+                        <li>Inspect wheel rims for damage, cracks, or corrosion</li>
+                        <li>Check wheel nuts/bolts are secure (torque if necessary)</li>
+                        <li>Verify spare tyre condition and pressure</li>
+                        <li>Check tyre age from DOT code (replace if over 6 years old)</li>
+                    </ol>
+                    <div class="tip-box">
+                        <strong>💡 Pro Tip</strong>
+                        Uneven tyre wear patterns tell a story: inside/outside edge wear suggests alignment issues, center wear indicates over-inflation, edge wear suggests under-inflation.
+                    </div>
+                </div>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">🔧</span>Brake System Inspection</h3>
+                    <ol class="step-list">
+                        <li>Check brake fluid level in reservoir</li>
+                        <li>Assess fluid condition (should be clear, not dark/contaminated)</li>
+                        <li>Measure brake pad thickness (minimum 3mm typically)</li>
+                        <li>Inspect brake discs for scoring, cracks, excessive rust</li>
+                        <li>Measure disc thickness against specification</li>
+                        <li>Check for disc runout/warping</li>
+                        <li>Inspect brake hoses for cracks, bulges, or damage</li>
+                        <li>Check pipes for corrosion or leaks</li>
+                        <li>Test brake pedal feel and travel</li>
+                        <li>Check handbrake operation and adjustment</li>
+                        <li>Inspect ABS sensors and wiring</li>
+                        <li>Test brake warning lights function</li>
+                    </ol>
+                </div>
+
+                <div class="procedure-card">
+                    <h3><span class="procedure-icon">⚡</span>Hybrid/Electric Vehicle Maintenance Checks</h3>
+                    <ol class="step-list">
+                        <li>Verify vehicle is in "service mode" before working</li>
+                        <li>Check high voltage system is isolated if required</li>
+                        <li>Inspect high voltage cables and connectors (no damage/corrosion)</li>
+                        <li>Check orange safety warnings are visible and intact</li>
+                        <li>Test 12V auxiliary battery condition</li>
+                        <li>Verify cooling system for hybrid/battery pack operates correctly</li>
+                        <li>Check cabin air filters (critical for battery cooling in some vehicles)</li>
+                        <li>Test regenerative braking operation</li>
+                        <li>Verify charging system functions correctly</li>
+                        <li>Check AdBlue/DEF levels if diesel hybrid</li>
+                        <li>Scan for diagnostic trouble codes</li>
+                        <li>Ensure all safety labels are present and legible</li>
+                    </ol>
+                    <div class="safety-box">
+                        <strong>🚨 HIGH VOLTAGE SAFETY</strong>
+                        Only competent, trained personnel should work on hybrid/electric vehicles. High voltage systems (>60V DC) can be lethal. Always follow manufacturer isolation procedures and wear appropriate PPE including insulated gloves rated for high voltage work.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Systems Tab -->
+            <div id="systems" class="tab-content">
+                <h2 class="section-header">Vehicle Systems Guide</h2>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🔧 Engine Systems</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>Engine System Components to Check</h4>
+                            <div class="system-checks">
+                                <div class="check-item">Engine oil level & condition</div>
+                                <div class="check-item">Oil filter condition</div>
+                                <div class="check-item">Air filter condition</div>
+                                <div class="check-item">Fuel filter (where accessible)</div>
+                                <div class="check-item">Drive belts (condition & tension)</div>
+                                <div class="check-item">Coolant level & concentration</div>
+                                <div class="check-item">Hoses & connections</div>
+                                <div class="check-item">Engine mounts</div>
+                                <div class="check-item">Exhaust system integrity</div>
+                                <div class="check-item">Emissions equipment</div>
+                                <div class="check-item">Spark plugs (petrol engines)</div>
+                                <div class="check-item">Glow plugs (diesel engines)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🛞 Chassis Systems</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>Chassis Components to Inspect</h4>
+                            <div class="system-checks">
+                                <div class="check-item">Suspension components</div>
+                                <div class="check-item">Shock absorbers/dampers</div>
+                                <div class="check-item">Springs condition</div>
+                                <div class="check-item">Ball joints & bushings</div>
+                                <div class="check-item">Steering rack & linkages</div>
+                                <div class="check-item">Power steering fluid level</div>
+                                <div class="check-item">Wheel bearings</div>
+                                <div class="check-item">Brake system components</div>
+                                <div class="check-item">Exhaust mountings</div>
+                                <div class="check-item">Underbody condition (rust/damage)</div>
+                                <div class="check-item">Subframe integrity</div>
+                                <div class="check-item">Track rod ends</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>⚙️ Transmission & Driveline</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>Transmission System Checks</h4>
+                            <div class="system-checks">
+                                <div class="check-item">Transmission fluid level & condition</div>
+                                <div class="check-item">Gearbox oil leaks</div>
+                                <div class="check-item">Clutch operation (manual)</div>
+                                <div class="check-item">Clutch fluid level (hydraulic systems)</div>
+                                <div class="check-item">Driveshafts & CV boots</div>
+                                <div class="check-item">Propshaft bearings (RWD/4WD)</div>
+                                <div class="check-item">Differential oil level</div>
+                                <div class="check-item">Transfer box (4WD vehicles)</div>
+                                <div class="check-item">Gear linkages & cables</div>
+                                <div class="check-item">Automatic transmission operation</div>
+                                <div class="check-item">Drive belt condition</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>⚡ Electrical & Electronic Systems</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>Electrical Components to Test</h4>
+                            <div class="system-checks">
+                                <div class="check-item">Battery condition & charge</div>
+                                <div class="check-item">Alternator charging system</div>
+                                <div class="check-item">Starter motor operation</div>
+                                <div class="check-item">All lighting systems</div>
+                                <div class="check-item">Warning lights function</div>
+                                <div class="check-item">Instrument panel operation</div>
+                                <div class="check-item">Wiper & washer systems</div>
+                                <div class="check-item">Horn operation</div>
+                                <div class="check-item">Heating & ventilation</div>
+                                <div class="check-item">Air conditioning (if fitted)</div>
+                                <div class="check-item">Central locking system</div>
+                                <div class="check-item">Window operation</div>
+                                <div class="check-item">Diagnostic trouble codes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🚗 Body & Interior Systems</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>Body & Interior Inspection Points</h4>
+                            <div class="system-checks">
+                                <div class="check-item">Body panel condition</div>
+                                <div class="check-item">Paint & finish</div>
+                                <div class="check-item">Glass condition (cracks/chips)</div>
+                                <div class="check-item">Windscreen wipers & blades</div>
+                                <div class="check-item">Door locks & hinges</div>
+                                <div class="check-item">Bonnet & boot operation</div>
+                                <div class="check-item">Seat belts function & condition</div>
+                                <div class="check-item">Airbag warning lights</div>
+                                <div class="check-item">Interior trim condition</div>
+                                <div class="check-item">Carpet & floor condition</div>
+                                <div class="check-item">Seat adjustment mechanisms</div>
+                                <div class="check-item">Mirror operation & condition</div>
+                                <div class="check-item">Infotainment systems</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🎯 Advanced Driver Assistance Systems (ADAS)</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="system-card">
+                            <h4>ADAS Components & Maintenance</h4>
+                            <p style="margin-bottom: 15px;"><strong>Why ADAS Matters in Routine Maintenance:</strong> Many ADAS systems require calibration after routine maintenance procedures like wheel alignment, windscreen replacement, or suspension work.</p>
+                            <div class="system-checks">
+                                <div class="check-item">Parking sensors (clean & functional)</div>
+                                <div class="check-item">Reversing camera (clean lens)</div>
+                                <div class="check-item">Lane departure warning sensors</div>
+                                <div class="check-item">Adaptive cruise control radar</div>
+                                <div class="check-item">Collision warning systems</div>
+                                <div class="check-item">Blind spot monitoring sensors</div>
+                                <div class="check-item">Automatic emergency braking</div>
+                                <div class="check-item">Traffic sign recognition camera</div>
+                            </div>
+                            <div class="warning-box" style="margin-top: 15px;">
+                                <strong>⚠️ Calibration Required After:</strong>
+                                Wheel alignment, windscreen replacement, suspension work, steering geometry changes, camera/sensor replacement, or any collision repair.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Tab -->
+            <div id="safety" class="tab-content">
+                <h2 class="section-header">Safety & Legal Requirements</h2>
+
+                <div class="info-card">
+                    <h3>🦺 Personal Protective Equipment (PPE)</h3>
+                    <p><strong>Essential PPE for routine maintenance:</strong></p>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Protection Type</th>
+                                <th>Equipment</th>
+                                <th>When Required</th>
+                            </tr>
+                            <tr>
+                                <td>Eye Protection</td>
+                                <td>Safety glasses/goggles</td>
+                                <td>When working under vehicles, with fluids, or compressed air</td>
+                            </tr>
+                            <tr>
+                                <td>Hand Protection</td>
+                                <td>Appropriate gloves</td>
+                                <td>When handling fluids, hot components, sharp edges</td>
+                            </tr>
+                            <tr>
+                                <td>Foot Protection</td>
+                                <td>Steel toe cap boots</td>
+                                <td>Always in workshop environment</td>
+                            </tr>
+                            <tr>
+                                <td>Respiratory Protection</td>
+                                <td>Dust mask/respirator</td>
+                                <td>When working with brake dust, solvents, or in dusty environments</td>
+                            </tr>
+                            <tr>
+                                <td>Hearing Protection</td>
+                                <td>Ear plugs/defenders</td>
+                                <td>When using power tools or in noisy environments</td>
+                            </tr>
+                            <tr>
+                                <td>Head Protection</td>
+                                <td>Bump cap</td>
+                                <td>When working under vehicles or in confined spaces</td>
+                            </tr>
+                            <tr>
+                                <td>High Voltage Work</td>
+                                <td>Insulated gloves (rated)</td>
+                                <td>When working on hybrid/electric vehicle high voltage systems</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="safety-box">
+                    <strong>🚨 Critical Safety Rules</strong>
+                    <ul>
+                        <li>Never work under a vehicle supported only by a jack - always use axle stands</li>
+                        <li>Always disconnect battery before electrical work (except testing)</li>
+                        <li>Never open cooling system when hot - wait for engine to cool completely</li>
+                        <li>Ensure adequate ventilation when running engines indoors (carbon monoxide hazard)</li>
+                        <li>Keep fire extinguishers accessible and know how to use them</li>
+                        <li>Never smoke or use naked flames near fuel systems or batteries</li>
+                        <li>Report all accidents, near misses, and unsafe conditions immediately</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📋 Legal Requirements</h3>
+                    <h4>Key Legislation Affecting Vehicle Maintenance:</h4>
+                    <ul>
+                        <li><strong>Road Traffic Act:</strong> Vehicles must be maintained in roadworthy condition</li>
+                        <li><strong>Construction & Use Regulations:</strong> Specify minimum standards for components</li>
+                        <li><strong>MOT Testing:</strong> Annual test for vehicles over 3 years old</li>
+                        <li><strong>Health & Safety at Work Act (HASAWA):</strong> Employer and employee duties</li>
+                        <li><strong>COSHH:</strong> Control of Substances Hazardous to Health</li>
+                        <li><strong>EPA:</strong> Environmental Protection Act - waste disposal requirements</li>
+                        <li><strong>Manual Handling Regulations:</strong> Safe lifting and carrying procedures</li>
+                        <li><strong>PPE Regulations:</strong> Provision and use of protective equipment</li>
+                        <li><strong>Electricity at Work Regulations:</strong> Safe electrical practices</li>
+                        <li><strong>WEEE Regulations:</strong> Waste Electrical and Electronic Equipment disposal</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>♻️ Environmental Considerations</h3>
+                    <h4>Proper Disposal Methods:</h4>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Waste Type</th>
+                                <th>Disposal Method</th>
+                                <th>Why It Matters</th>
+                            </tr>
+                            <tr>
+                                <td>Engine Oil</td>
+                                <td>Designated oil collection tank, then licensed disposal</td>
+                                <td>1 liter contaminates 1 million liters of water</td>
+                            </tr>
+                            <tr>
+                                <td>Oil Filters</td>
+                                <td>Drain fully, dispose in designated container</td>
+                                <td>Contains residual oil and metal contaminants</td>
+                            </tr>
+                            <tr>
+                                <td>Coolant</td>
+                                <td>Specialized coolant disposal system</td>
+                                <td>Toxic to animals, contaminates waterways</td>
+                            </tr>
+                            <tr>
+                                <td>Brake Fluid</td>
+                                <td>Hazardous waste disposal</td>
+                                <td>Highly toxic and damages paintwork</td>
+                            </tr>
+                            <tr>
+                                <td>Batteries</td>
+                                <td>Return to supplier or licensed recycling facility</td>
+                                <td>Contains lead and sulfuric acid</td>
+                            </tr>
+                            <tr>
+                                <td>Tyres</td>
+                                <td>Tyre recycling facility</td>
+                                <td>Non-biodegradable, fire hazard if stored</td>
+                            </tr>
+                            <tr>
+                                <td>Air Filters</td>
+                                <td>General waste if not contaminated</td>
+                                <td>May contain oil or fuel residue</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Hazardous Substances - COSHH</strong>
+                    <p>Always read safety data sheets (SDS) for all chemicals used. Key hazards in routine maintenance:</p>
+                    <ul>
+                        <li><strong>Engine Oil:</strong> Skin contact can cause dermatitis - wear gloves</li>
+                        <li><strong>Brake Fluid:</strong> Corrosive, damages paintwork and eyes - handle carefully</li>
+                        <li><strong>Coolant:</strong> Toxic if swallowed - never siphon by mouth</li>
+                        <li><strong>Battery Acid:</strong> Corrosive - can cause severe burns</li>
+                        <li><strong>Brake Dust:</strong> May contain asbestos in older vehicles - avoid breathing</li>
+                        <li><strong>Degreasers/Solvents:</strong> Harmful vapors - ensure adequate ventilation</li>
+                        <li><strong>AdBlue/DEF:</strong> Irritant - avoid skin and eye contact</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quick Reference Tab -->
+            <div id="quick-ref" class="tab-content">
+                <h2 class="section-header">Quick Reference Guide</h2>
+
+                <div class="quick-ref-grid">
+                    <div class="quick-ref-card">
+                        <h4>🛢️ Oil Types</h4>
+                        <p>5W-30, 10W-40 - First number = cold viscosity, Second = hot viscosity. Lower numbers = thinner oil.</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🌡️ Coolant Mix</h4>
+                        <p>Typically 50/50 antifreeze to water. Protects to -37°C and prevents corrosion.</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🔋 Battery Voltage</h4>
+                        <p>Fully charged: 12.6V+<br>Charging: 13.8-14.4V<br>Below 12.4V: Needs charging</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🛞 Tread Depth</h4>
+                        <p>Legal minimum: 1.6mm<br>Recommended replace: 3mm<br>New tyre: 8mm</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🔧 Torque Basics</h4>
+                        <p>Wheel nuts: 80-120 Nm typically<br>Sump plug: 20-30 Nm typically<br>Always check manual!</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>💧 Brake Fluid</h4>
+                        <p>DOT 3, 4, 5.1 (glycol-based)<br>DOT 5 (silicone-based)<br>Never mix types!</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>⚡ High Voltage</h4>
+                        <p>Orange cables = High Voltage<br>> 60V DC / > 30V AC<br>Competent person only!</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>📅 Service Intervals</h4>
+                        <p>Typical: 12 months / 12,000 miles<br>Always check manufacturer schedule</p>
+                    </div>
+                </div>
+
+                <div class="info-card" style="margin-top: 30px;">
+                    <h3>🔍 Inspection Techniques</h3>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Technique</th>
+                                <th>Used For</th>
+                                <th>What To Look For</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Visual</strong></td>
+                                <td>Most components</td>
+                                <td>Damage, cracks, corrosion, leaks, wear, condition</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aural</strong></td>
+                                <td>Running engines, bearings</td>
+                                <td>Unusual noises, knocking, grinding, squealing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Measurement</strong></td>
+                                <td>Wear items, clearances</td>
+                                <td>Tread depth, disc thickness, pad thickness, belt tension</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Functional</strong></td>
+                                <td>Operating systems</td>
+                                <td>Lights work, brakes stop, wipers sweep, horn sounds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pressure Testing</strong></td>
+                                <td>Sealed systems</td>
+                                <td>Coolant system leaks, AC system integrity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Electronic Testing</strong></td>
+                                <td>Electrical systems</td>
+                                <td>Voltage, current, resistance, fault codes</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>📝 Technical Information Sources</h3>
+                    <ul>
+                        <li><strong>Manufacturer Workshop Manuals:</strong> Most authoritative, vehicle-specific procedures</li>
+                        <li><strong>Technical Service Bulletins (TSBs):</strong> Updates on known issues and solutions</li>
+                        <li><strong>Owners Manual:</strong> Basic maintenance schedules and specifications</li>
+                        <li><strong>Electronic Service Information:</strong> Autodata, Mitchell, Haynes Pro</li>
+                        <li><strong>Parts Catalogs:</strong> Correct part identification and specifications</li>
+                        <li><strong>Vehicle Identification Codes:</strong> VIN, paint codes, option codes, build dates</li>
+                        <li><strong>MOT Testing Manual:</strong> Legal inspection standards</li>
+                        <li><strong>Online Forums/Databases:</strong> Shared knowledge (verify from reliable sources)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>⏱️ Time & Cost Management</h3>
+                    <ul>
+                        <li>Work to agreed timescales to maintain customer satisfaction</li>
+                        <li>Time directly affects labor costs and workshop profitability</li>
+                        <li>Report anticipated delays to relevant person promptly</li>
+                        <li>Keep customers informed of progress</li>
+                        <li>Accurate time recording for job costing</li>
+                        <li>Use estimated repair times from technical information</li>
+                        <li>Balance speed with quality - rushing causes mistakes</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>✍️ Documentation & Record Keeping</h3>
+                    <ul>
+                        <li><strong>Service Records:</strong> Date, mileage, work carried out, parts used</li>
+                        <li><strong>Job Cards:</strong> Customer details, vehicle details, work requested, findings</li>
+                        <li><strong>Inspection Checklists:</strong> Standardized checks, tick-off lists</li>
+                        <li><strong>Signature Required:</strong> Confirms work completed to standard, provides accountability</li>
+                        <li><strong>Warranty Records:</strong> Maintain for warranty claims, use approved parts/procedures</li>
+                        <li><strong>Additional Faults:</strong> Report any issues found outside requested work</li>
+                        <li><strong>Digital Records:</strong> Many systems now use electronic job cards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Flashcard data
+        const flashcards = [
+            {
+                term: "PPE",
+                definition: "Personal Protective Equipment - safety gear worn to minimize exposure to hazards. Includes safety glasses, gloves, steel-toe boots, overalls, hearing protection, and respiratory protection."
+            },
+            {
+                term: "COSHH",
+                definition: "Control of Substances Hazardous to Health - regulations requiring assessment and control of substances that could harm health (oils, fluids, solvents, brake dust, etc.)"
+            },
+            {
+                term: "VIN",
+                definition: "Vehicle Identification Number - unique 17-character code identifying specific vehicle, contains manufacturing details, specifications, and model year."
+            },
+            {
+                term: "Scheduled Maintenance",
+                definition: "Regular servicing based on time or mileage intervals as specified by manufacturer, includes inspections, adjustments, and replacements to maintain vehicle condition."
+            },
+            {
+                term: "Viscosity",
+                definition: "Measure of oil's thickness/flow resistance. Lower numbers = thinner oil. First number (e.g., 5W) = cold performance, second (e.g., 30) = hot performance."
+            },
+            {
+                term: "Torque Specification",
+                definition: "Precise amount of rotational force required to tighten fasteners correctly, measured in Nm (Newton meters). Critical for safety and preventing damage."
+            },
+            {
+                term: "Aural Inspection",
+                definition: "Assessment technique using hearing to detect abnormal sounds like knocking, grinding, squealing, or hissing that indicate component wear or failure."
+            },
+            {
+                term: "Antifreeze Concentration",
+                definition: "Percentage of antifreeze in coolant mixture. Typically 50/50 with water. Protects against freezing, boiling, and corrosion. Measured with hydrometer."
+            },
+            {
+                term: "AdBlue/DEF",
+                definition: "Diesel Exhaust Fluid used in Selective Catalytic Reduction (SCR) systems to reduce NOx emissions in diesel engines. 32.5% urea solution."
+            },
+            {
+                term: "ADAS",
+                definition: "Advanced Driver Assistance Systems - electronic safety features like parking sensors, lane departure warning, adaptive cruise control. Require calibration after certain maintenance."
+            },
+            {
+                term: "Regenerative Braking",
+                definition: "System in hybrid/electric vehicles that converts kinetic energy during braking into electrical energy to recharge battery, reducing brake wear."
+            },
+            {
+                term: "High Voltage System",
+                definition: "Electrical systems over 60V DC or 30V AC. Found in hybrid/electric vehicles. Orange cables indicate high voltage. Requires specialized training and PPE."
+            },
+            {
+                term: "Brake Disc Runout",
+                definition: "Lateral wobble or warping of brake disc. Causes vibration during braking. Measured with dial gauge. Excessive runout requires disc replacement."
+            },
+            {
+                term: "Tread Depth Gauge",
+                definition: "Tool for measuring tyre tread depth. Legal minimum 1.6mm across central 3/4 of tread, around entire circumference. Recommended replacement at 3mm."
+            },
+            {
+                term: "DOT Code",
+                definition: "Department of Transportation code on tyre sidewall showing manufacturing date. Last 4 digits = week and year of manufacture. Replace tyres over 6 years old."
+            },
+            {
+                term: "Diagnostic Trouble Code (DTC)",
+                definition: "Alphanumeric code stored by vehicle computer when fault detected. Retrieved using diagnostic scanner. Guides troubleshooting and repair."
+            },
+            {
+                term: "Technical Service Bulletin",
+                definition: "Manufacturer-issued document providing updates on known issues, improved repair procedures, or specification changes for specific vehicle models."
+            },
+            {
+                term: "Warranty Requirements",
+                definition: "Conditions that must be met to maintain vehicle warranty coverage. Includes using approved parts, following service schedules, and proper documentation."
+            },
+            {
+                term: "Environmental Protection Act",
+                definition: "Legislation requiring proper disposal of automotive waste (oils, fluids, batteries, tyres) to prevent environmental contamination. Includes duty of care."
+            },
+            {
+                term: "Service Mode",
+                definition: "Special operating state for hybrid/electric vehicles that isolates high voltage systems for safe maintenance work. Must be activated before working."
+            },
+            {
+                term: "Conformity Check",
+                definition: "Verification that component or system meets manufacturer specifications and legal requirements after inspection or repair."
+            },
+            {
+                term: "Hydraulic Fluid",
+                definition: "Fluids used in pressurized systems like brakes, clutch, power steering. Different types not interchangeable (e.g., DOT 3, DOT 4, ATF)."
+            },
+            {
+                term: "Load Test",
+                definition: "Battery test applying load while monitoring voltage. Simulates starting conditions. Determines battery's ability to deliver required current."
+            },
+            {
+                term: "Pressure Cap",
+                definition: "Cooling system cap that maintains specific system pressure (typically 15 PSI), raising boiling point. Must be correct rating and sealing properly."
+            },
+            {
+                term: "CV Boot",
+                definition: "Constant Velocity joint protective rubber boot containing grease. Splits/tears allow dirt in and grease out, causing joint failure if not replaced."
+            },
+            {
+                term: "Emission Equipment",
+                definition: "Systems reducing harmful exhaust emissions: catalytic converter, oxygen sensors, EGR valve, DPF (diesel), AdBlue system. Critical for legal compliance."
+            },
+            {
+                term: "Calibration",
+                definition: "Process of adjusting measuring equipment or vehicle systems to ensure accurate readings and operation to specified standards."
+            },
+            {
+                term: "OEM Parts",
+                definition: "Original Equipment Manufacturer parts - made by or for vehicle manufacturer. Ensures correct specifications, fitment, and warranty compliance."
+            }
+        ];
+
+        // Initialize flashcards
+        function initializeFlashcards() {
+            const container = document.getElementById('flashcardContainer');
+            flashcards.forEach((card, index) => {
+                const flashcardDiv = document.createElement('div');
+                flashcardDiv.className = 'flashcard';
+                flashcardDiv.innerHTML = `
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            ${card.term}
+                        </div>
+                        <div class="flashcard-back">
+                            ${card.definition}
+                        </div>
+                    </div>
+                `;
+                flashcardDiv.onclick = () => flashcardDiv.classList.toggle('flipped');
+                container.appendChild(flashcardDiv);
+            });
+        }
+
+        // Filter flashcards based on search
+        function filterFlashcards() {
+            const searchTerm = document.getElementById('flashcardSearch').value.toLowerCase();
+            const flashcardElements = document.querySelectorAll('.flashcard');
+            
+            flashcardElements.forEach((card, index) => {
+                const term = flashcards[index].term.toLowerCase();
+                const definition = flashcards[index].definition.toLowerCase();
+                
+                if (term.includes(searchTerm) || definition.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Tab navigation
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+        }
+
+        // Accordion toggle
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Close all accordions
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+            
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            initializeFlashcards();
+        };
+    </script>
+</body>
+</html>

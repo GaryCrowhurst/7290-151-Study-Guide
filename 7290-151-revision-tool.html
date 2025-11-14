@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7290-151 Revision Tool | Routine Light Vehicle Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .progress-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 28px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2a5298;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 2px;
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .start-screen, .quiz-screen, .results-screen {
+            display: none;
+        }
+
+        .start-screen.active, .quiz-screen.active, .results-screen.active {
+            display: block;
+        }
+
+        .intro-text {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .intro-text h2 {
+            color: #2a5298;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .intro-text h3 {
+            font-size: 1rem;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .intro-text p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .intro-text ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .intro-text li {
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            text-align: center;
+            font-weight: 600;
+            width: 100%;
+            min-height: 48px;
+            touch-action: manipulation;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #868f96 0%, #596164 100%);
+        }
+
+        .question-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 14px 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 48px;
+            touch-action: manipulation;
+        }
+
+        .option:active {
+            transform: scale(0.98);
+        }
+
+        .option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .option label {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .option.selected {
+            background: #e7f3ff;
+            border-color: #667eea;
+            font-weight: 600;
+        }
+
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            color: #721c24;
+        }
+
+        .feedback-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .results-summary {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .results-summary h2 {
+            color: #2a5298;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .score-percentage {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .grade-message {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .grade-pass {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .grade-merit {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .grade-distinction {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .grade-fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .review-section {
+            margin-top: 30px;
+        }
+
+        .review-section h3 {
+            color: #2a5298;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .review-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #e9ecef;
+        }
+
+        .review-item.correct {
+            border-left-color: #28a745;
+        }
+
+        .review-item.incorrect {
+            border-left-color: #dc3545;
+        }
+
+        .review-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+
+        .review-answer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .your-answer {
+            color: #dc3545;
+        }
+
+        .correct-answer {
+            color: #28a745;
+        }
+
+        /* Tablet Styles (min-width: 600px) */
+        @media (min-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .intro-text {
+                padding: 20px;
+            }
+
+            .question-card {
+                padding: 20px;
+            }
+
+            .question-text {
+                font-size: 1.15rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .score-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .score-percentage {
+                font-size: 2.8rem;
+            }
+
+            .navigation {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .btn {
+                width: auto;
+                padding: 14px 35px;
+            }
+        }
+
+        /* Desktop Styles (min-width: 900px) */
+        @media (min-width: 900px) {
+            body {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .progress-section {
+                padding: 20px 30px;
+            }
+
+            .intro-text {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+
+            .intro-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .question-card {
+                padding: 25px;
+                margin-bottom: 20px;
+            }
+
+            .question-text {
+                font-size: 1.2rem;
+            }
+
+            .option {
+                padding: 15px 20px;
+            }
+
+            .option:hover {
+                background: #e7f3ff;
+                border-color: #667eea;
+                transform: translateX(5px);
+            }
+
+            .btn {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            }
+
+            .btn:active {
+                transform: translateY(0);
+            }
+
+            .score-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .score-percentage {
+                font-size: 3rem;
+            }
+
+            .score-label {
+                font-size: 1rem;
+            }
+
+            .results-summary h2 {
+                font-size: 2rem;
+            }
+
+            .grade-message {
+                font-size: 1.3rem;
+                padding: 15px;
+            }
+
+            .navigation {
+                margin-top: 30px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 7290-151: Knowledge of Routine Light Vehicle Maintenance</h1>
+            <p>Level 2 | Multiple Choice Assessment Revision Tool</p>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="currentQuestion">0</div>
+                    <div class="stat-label">Current Question</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="totalQuestions">30</div>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="correctAnswers">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="incorrectAnswers">0</div>
+                    <div class="stat-label">Incorrect</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Start Screen -->
+            <div class="start-screen active" id="startScreen">
+                <div class="intro-text">
+                    <h2>Welcome to the Revision Tool</h2>
+                    <p>This interactive revision tool will help you prepare for the <strong>Unit 7290-151</strong> online multiple choice assessment.</p>
+                    
+                    <h3 style="margin-top: 20px; margin-bottom: 10px;">What to Expect:</h3>
+                    <ul>
+                        <li><strong>30 practice questions</strong> covering all assessment criteria</li>
+                        <li>Questions on routine maintenance procedures and safety</li>
+                        <li>Topics include engine, chassis, electrical, and transmission systems</li>
+                        <li>Hybrid/electric vehicle maintenance knowledge</li>
+                        <li>Immediate feedback after each answer</li>
+                        <li>Detailed explanations for learning</li>
+                        <li>Final results with grade indication (Pass/Merit/Distinction)</li>
+                    </ul>
+
+                    <h3 style="margin-top: 20px; margin-bottom: 10px;">Grading System:</h3>
+                    <ul>
+                        <li><strong>Pass:</strong> 65% or above</li>
+                        <li><strong>Merit:</strong> 75% or above</li>
+                        <li><strong>Distinction:</strong> 85% or above</li>
+                    </ul>
+                </div>
+                <button class="btn" onclick="startQuiz()">Start Revision Quiz</button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="quiz-screen" id="quizScreen">
+                <div class="question-card">
+                    <div class="question-number" id="questionNumber">Question 1 of 30</div>
+                    <div class="question-text" id="questionText"></div>
+                    <div class="options" id="options"></div>
+                    <div class="feedback" id="feedback"></div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
+                    <button class="btn" onclick="checkAnswer()" id="checkBtn">Check Answer</button>
+                    <button class="btn" onclick="nextQuestion()" id="nextBtn" style="display: none;">Next Question</button>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen" id="resultsScreen">
+                <div class="results-summary">
+                    <h2>Quiz Complete!</h2>
+                    <div class="score-circle">
+                        <div class="score-percentage" id="finalScore">0%</div>
+                        <div class="score-label">Final Score</div>
+                    </div>
+                    <div class="grade-message" id="gradeMessage"></div>
+                    <div class="stats" style="margin-top: 20px;">
+                        <div class="stat">
+                            <div class="stat-value" id="finalCorrect">0</div>
+                            <div class="stat-label">Correct Answers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="finalIncorrect">0</div>
+                            <div class="stat-label">Incorrect Answers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value" id="finalTotal">30</div>
+                            <div class="stat-label">Total Questions</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-section">
+                    <h3>Review Your Answers</h3>
+                    <div id="reviewList"></div>
+                </div>
+
+                <div class="navigation">
+                    <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "When carrying out routine maintenance, which of the following is essential for avoiding injury to yourself and others?",
+                options: [
+                    "Working quickly without checking procedures",
+                    "Using suitable personal protective equipment (PPE)",
+                    "Skipping safety checks to save time",
+                    "Ignoring manufacturer's safety guidelines"
+                ],
+                correct: 1,
+                explanation: "Using suitable PPE throughout all maintenance activities is essential for avoiding injury. This includes eye, ear, head, skin, feet, hand, and lung protection as appropriate to the task."
+            },
+            {
+                question: "What is the primary environmental concern when disposing of used engine oil?",
+                options: [
+                    "It takes up too much storage space",
+                    "It has no environmental impact",
+                    "Improper disposal can contaminate soil and water",
+                    "It is too expensive to dispose of properly"
+                ],
+                correct: 2,
+                explanation: "Waste disposal, including used oil and filters, has significant environmental impact. Used oil must be disposed of properly to prevent contamination of soil and water sources."
+            },
+            {
+                question: "When working on hybrid or electric vehicles during routine maintenance, what additional safety consideration is most important?",
+                options: [
+                    "Using standard tools without modification",
+                    "Awareness of high voltage systems and proper isolation procedures",
+                    "Working faster to minimize exposure",
+                    "Avoiding all electrical system checks"
+                ],
+                correct: 1,
+                explanation: "Hybrid and electric vehicles have high voltage systems that require specific safety procedures, including proper isolation and use of appropriate tools and PPE rated for high voltage work."
+            },
+            {
+                question: "Which of the following is NOT a sign of component wear that should be identified during routine maintenance?",
+                options: [
+                    "Damaged components showing visible cracks",
+                    "Corrosion on metal surfaces",
+                    "Brand new components with no use",
+                    "Inadequate fluid levels"
+                ],
+                correct: 2,
+                explanation: "During scheduled routine maintenance, technicians must identify damage, corrosion, inadequate fluid levels, leaks, wear, and security problems. New components with no use would not show signs of wear."
+            },
+            {
+                question: "What assessment method would be most appropriate for checking brake disc condition?",
+                options: [
+                    "Aural (listening) assessment only",
+                    "Visual and measurement assessment",
+                    "Ignoring the brakes entirely",
+                    "Only checking when customer reports a problem"
+                ],
+                correct: 1,
+                explanation: "Checking brake disc condition requires both visual inspection for cracks, scoring, and corrosion, plus measurements of disc thickness against manufacturer specifications to determine serviceability."
+            },
+            {
+                question: "Which of the following systems is NOT typically inspected during routine light vehicle maintenance?",
+                options: [
+                    "Engine systems",
+                    "Transmission and driveline",
+                    "Spacecraft navigation systems",
+                    "Electrical and electronic systems"
+                ],
+                correct: 2,
+                explanation: "Routine light vehicle maintenance includes inspection of engine, chassis, wheels and tyres, transmission and driveline, electrical and electronic systems, exterior vehicle body, vehicle interior, and onboard vehicle displays."
+            },
+            {
+                question: "Why is it important to use the correct sources of technical information for scheduled maintenance?",
+                options: [
+                    "To ensure procedures match vehicle specifications and legal requirements",
+                    "It doesn't matter which information source you use",
+                    "To make the job take longer",
+                    "Only experienced technicians need technical information"
+                ],
+                correct: 0,
+                explanation: "Using correct sources of technical information ensures maintenance is carried out to manufacturer specifications, meets legal requirements, and follows proper procedures. This prevents damage and ensures safety."
+            },
+            {
+                question: "What is the purpose of vehicle identification codes?",
+                options: [
+                    "To make vehicles look more professional",
+                    "To identify specific vehicle specifications, parts, and service requirements",
+                    "They serve no practical purpose",
+                    "Only for manufacturers' internal use"
+                ],
+                correct: 1,
+                explanation: "Identification codes (VIN, paint codes, option codes, etc.) allow technicians to identify the correct specifications, parts, fluids, and service procedures for that specific vehicle."
+            },
+            {
+                question: "When conducting routine maintenance on hybrid vehicles, which additional system requires specific knowledge?",
+                options: [
+                    "Traditional mechanical braking only",
+                    "Power units including battery and motor systems",
+                    "Standard petrol fuel systems only",
+                    "Conventional exhaust systems only"
+                ],
+                correct: 1,
+                explanation: "Hybrid vehicles require knowledge of power units (battery packs, electric motors), transmission systems adapted for hybrid operation, and advanced driver assistance systems (ADAS) in addition to conventional systems."
+            },
+            {
+                question: "Which of the following adjustments might need to be checked during routine maintenance?",
+                options: [
+                    "Clearances, pressures, and tension",
+                    "Vehicle color preferences",
+                    "Radio station presets only",
+                    "Driver seat memory positions only"
+                ],
+                correct: 0,
+                explanation: "Routine maintenance involves checking and adjusting clearances (valve clearances), settings (idle speed), alignment (tracking), pressures (tyre pressure), tension (belt tension), and fluid levels in engine, transmission, chassis, electrical, and body areas."
+            },
+            {
+                question: "What is the correct procedure for checking and replacing lubricants?",
+                options: [
+                    "Use any available oil regardless of specification",
+                    "Check levels, identify recommended grade, and replace as needed",
+                    "Never replace oil between services",
+                    "Only check oil visually without reference to specifications"
+                ],
+                correct: 1,
+                explanation: "Proper procedure involves checking oil levels, identifying the recommended grade from technical information, assessing cleanliness, and replacing oil and filters according to service schedules. Using incorrect oil can cause serious engine damage."
+            },
+            {
+                question: "What are the consequences of using incorrect lubricants or fluids in a vehicle?",
+                options: [
+                    "No consequences - all fluids are the same",
+                    "Potential component damage, reduced performance, and system failure",
+                    "Improved performance in all cases",
+                    "Only cosmetic issues"
+                ],
+                correct: 1,
+                explanation: "Using incorrect lubricants or fluids can cause component damage, seal degradation, reduced lubrication, overheating, system failure, and voiding of warranties. Always use fluids meeting manufacturer specifications."
+            },
+            {
+                question: "When should cosmetic damage found during routine maintenance be reported?",
+                options: [
+                    "Never - it's not the technician's responsibility",
+                    "Only if it affects mechanical function",
+                    "When it's outside normal service items and may affect customer satisfaction",
+                    "Only if the customer specifically asks about it"
+                ],
+                correct: 2,
+                explanation: "Technicians should recognize and report cosmetic damage outside normal service items, as this protects both the workshop (documenting pre-existing damage) and informs the customer about the vehicle's condition."
+            },
+            {
+                question: "What is the proper procedure when delays occur during routine maintenance?",
+                options: [
+                    "Continue working without informing anyone",
+                    "Report delays and referral of problems to relevant person(s) promptly",
+                    "Complete the job regardless of how long it takes",
+                    "Abandon the work without explanation"
+                ],
+                correct: 1,
+                explanation: "Professional practice requires reporting anticipated delays and problems to relevant personnel promptly. This allows for customer communication, work schedule adjustments, and appropriate resource allocation."
+            },
+            {
+                question: "Why must operating specifications and tolerances be identified for systems during maintenance?",
+                options: [
+                    "They are not important for routine maintenance",
+                    "To determine if components are within acceptable limits and safe to use",
+                    "Only for warranty purposes",
+                    "To make the job more complicated"
+                ],
+                correct: 1,
+                explanation: "Operating specifications and tolerances define acceptable limits for system operation. Checking these ensures components are safe, legal, and functional, including for hybrid/electric vehicle systems."
+            },
+            {
+                question: "Which document type would contain legal requirements for vehicle maintenance?",
+                options: [
+                    "Workshop posters only",
+                    "Technical service bulletins, MOT testing manual, and legislation",
+                    "Customer preference forms",
+                    "Advertising brochures"
+                ],
+                correct: 1,
+                explanation: "Legal requirements for vehicle maintenance are found in legislation (Construction & Use regulations), MOT testing manuals, technical service bulletins, and manufacturer guidelines that reference legal standards."
+            },
+            {
+                question: "What is the relationship between time and costs in vehicle maintenance?",
+                options: [
+                    "There is no relationship between time and costs",
+                    "Time directly affects labor costs and customer satisfaction",
+                    "Costs decrease as time increases",
+                    "Time is unlimited in professional workshops"
+                ],
+                correct: 1,
+                explanation: "Time management is critical in professional workshops. Time directly relates to labor costs, customer satisfaction, and profitability. Working to agreed timescales while maintaining quality is essential."
+            },
+            {
+                question: "Why is signing workplace documentation and vehicle records important?",
+                options: [
+                    "It looks professional but serves no real purpose",
+                    "It provides accountability, traceability, and legal compliance",
+                    "Only managers need to sign documents",
+                    "Electronic systems make signatures unnecessary"
+                ],
+                correct: 1,
+                explanation: "Signing documentation provides accountability for work performed, enables traceability for quality and warranty purposes, meets legal requirements, and confirms work completion to agreed standards."
+            },
+            {
+                question: "What is the purpose of manufacturers' warranty requirements relating to routine maintenance?",
+                options: [
+                    "To make work more difficult for technicians",
+                    "To ensure warranty validity through proper maintenance using correct parts and procedures",
+                    "They have no real purpose",
+                    "Only to benefit the manufacturer"
+                ],
+                correct: 1,
+                explanation: "Warranty requirements specify maintenance schedules, approved parts, and procedures that must be followed to maintain warranty coverage. Non-compliance can void warranties and affect customers' rights."
+            },
+            {
+                question: "Which inspection technique would be most appropriate for detecting a small coolant leak?",
+                options: [
+                    "Aural (listening) only",
+                    "Visual inspection and pressure testing",
+                    "Ignoring small leaks as insignificant",
+                    "Only checking when engine overheats"
+                ],
+                correct: 1,
+                explanation: "Detecting coolant leaks requires visual inspection of hoses, connections, and components, often combined with pressure testing using specialized equipment to identify small leaks before they cause overheating issues."
+            },
+            {
+                question: "What equipment should be calibrated to meet manufacturers' and legal requirements?",
+                options: [
+                    "Only hand tools need calibration",
+                    "Test instruments, emission equipment, wheel alignment, and headlight aim equipment",
+                    "No equipment requires calibration",
+                    "Only equipment over 5 years old"
+                ],
+                correct: 1,
+                explanation: "Test instruments, emission testing equipment, wheel alignment systems, headlight beam setting equipment, and torque wrenches must be regularly calibrated to ensure accurate readings and legal compliance."
+            },
+            {
+                question: "When checking engine oil during routine maintenance, what should be assessed?",
+                options: [
+                    "Only the oil level",
+                    "Level, cleanliness, correct grade, and condition",
+                    "Just look at the color",
+                    "Oil checks are unnecessary"
+                ],
+                correct: 1,
+                explanation: "Comprehensive oil checking includes verifying correct level, assessing cleanliness and condition (contamination, discoloration), confirming correct grade for the vehicle, and checking for proper disposal methods."
+            },
+            {
+                question: "What information about tyres must be checked during routine maintenance?",
+                options: [
+                    "Brand preference only",
+                    "Pressure, tread depth, condition, and legal compliance",
+                    "Only when customer reports a problem",
+                    "Color and shine"
+                ],
+                correct: 1,
+                explanation: "Tyre inspection includes checking pressures against specifications, measuring tread depth for legal compliance (1.6mm minimum), inspecting for damage, wear patterns, age, and proper fitting."
+            },
+            {
+                question: "Which fluid is part of exhaust emissions treatment systems in modern vehicles?",
+                options: [
+                    "Windscreen washer fluid",
+                    "AdBlue/DEF (Diesel Exhaust Fluid) in SCR systems",
+                    "Standard motor oil",
+                    "Brake fluid"
+                ],
+                correct: 1,
+                explanation: "AdBlue (Diesel Exhaust Fluid) is used in Selective Catalytic Reduction (SCR) systems to reduce NOx emissions in diesel vehicles. Checking and replenishing this fluid is part of routine maintenance."
+            },
+            {
+                question: "What is the correct procedure for checking drive belt condition?",
+                options: [
+                    "Visual inspection for cracks, glazing, proper tension, and alignment",
+                    "Only check if belt breaks",
+                    "Belts never need checking",
+                    "Only listen for squealing noises"
+                ],
+                correct: 0,
+                explanation: "Drive belt inspection involves visual checking for cracks, fraying, glazing, and damage, measuring or checking tension against specifications, and verifying proper alignment on pulleys."
+            },
+            {
+                question: "Why must brake components be checked during routine maintenance?",
+                options: [
+                    "It's not necessary if brakes are working",
+                    "To ensure legal compliance and safety before wear becomes critical",
+                    "Only for MOT purposes",
+                    "To increase service costs unnecessarily"
+                ],
+                correct: 1,
+                explanation: "Brake system inspection is critical for safety and legal compliance. Checking pad/lining thickness, disc/drum condition, and hydraulic system integrity prevents brake failure and ensures legal roadworthiness."
+            },
+            {
+                question: "What should be checked in the vehicle interior during routine maintenance?",
+                options: [
+                    "Only seat cleanliness",
+                    "Comfort systems, convenience features, warning lights, and safety systems",
+                    "Nothing - interiors aren't part of maintenance",
+                    "Only if customer complains"
+                ],
+                correct: 1,
+                explanation: "Interior checks include operation of comfort and convenience systems (climate control, infotainment), warning lights and displays, safety systems (airbag indicators, seatbelt systems), and overall functionality."
+            },
+            {
+                question: "What is the purpose of diagnostic and fault code readers in routine maintenance?",
+                options: [
+                    "They are only used for major repairs",
+                    "To identify stored fault codes, monitor live data, and verify system operation",
+                    "They serve no purpose in routine maintenance",
+                    "Only dealers can use these tools"
+                ],
+                correct: 1,
+                explanation: "Diagnostic tools check for stored fault codes, monitor live sensor data, verify system operation, perform system tests, and confirm repairs. They're essential for modern vehicle maintenance including hybrid/electric vehicles."
+            },
+            {
+                question: "When should hydraulic fluids be checked during routine maintenance?",
+                options: [
+                    "Only when systems fail",
+                    "At regular intervals checking level, condition, and for leaks",
+                    "Hydraulic fluids never need checking",
+                    "Only during major services"
+                ],
+                correct: 1,
+                explanation: "Hydraulic fluids (brake fluid, power steering fluid, clutch fluid) must be checked regularly for correct levels, condition (contamination, moisture content), and system integrity through leak inspection."
+            },
+            {
+                question: "What makes Advanced Driver Assistance Systems (ADAS) relevant to routine maintenance?",
+                options: [
+                    "They are not relevant to routine maintenance",
+                    "Calibration after servicing, sensor cleaning, and system function checks are required",
+                    "Only specialized dealers can work on ADAS",
+                    "ADAS requires no maintenance"
+                ],
+                correct: 1,
+                explanation: "ADAS systems (parking sensors, cameras, radar, lane departure) require regular cleaning, function testing, and recalibration after certain service procedures like wheel alignment, windscreen replacement, or suspension work to ensure proper operation."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let userAnswers = [];
+        let answered = false;
+
+        function startQuiz() {
+            document.getElementById('startScreen').classList.remove('active');
+            document.getElementById('quizScreen').classList.add('active');
+            loadQuestion();
+            updateProgress();
+        }
+
+        function loadQuestion() {
+            answered = false;
+            const question = questions[currentQuestionIndex];
+            
+            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.onclick = () => selectOption(index);
+                optionDiv.innerHTML = `
+                    <input type="radio" name="answer" id="option${index}" value="${index}">
+                    <label for="option${index}" style="cursor: pointer; flex: 1;">${option}</label>
+                `;
+                optionsDiv.appendChild(optionDiv);
+            });
+
+            document.getElementById('feedback').classList.remove('show', 'correct', 'incorrect');
+            document.getElementById('checkBtn').style.display = 'inline-block';
+            document.getElementById('nextBtn').style.display = 'none';
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+            
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.option')[index].classList.add('selected');
+            document.getElementById(`option${index}`).checked = true;
+        }
+
+        function checkAnswer() {
+            if (answered) return;
+            
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+            if (!selectedOption) {
+                alert('Please select an answer before checking.');
+                return;
+            }
+
+            answered = true;
+            const userAnswer = parseInt(selectedOption.value);
+            const question = questions[currentQuestionIndex];
+            const isCorrect = userAnswer === question.correct;
+
+            userAnswers[currentQuestionIndex] = {
+                question: question.question,
+                userAnswer: userAnswer,
+                correctAnswer: question.correct,
+                isCorrect: isCorrect,
+                options: question.options
+            };
+
+            if (isCorrect) {
+                correctCount++;
+            } else {
+                incorrectCount++;
+            }
+
+            // Update feedback
+            const feedback = document.getElementById('feedback');
+            feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = `
+                <div class="feedback-title">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</div>
+                <div>${question.explanation}</div>
+            `;
+
+            // Highlight options
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                opt.classList.add('disabled');
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                } else if (index === userAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            document.getElementById('checkBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'inline-block';
+            document.getElementById('nextBtn').textContent = currentQuestionIndex === questions.length - 1 ? 'View Results' : 'Next Question';
+
+            updateProgress();
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+            updateProgress();
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+                
+                // If already answered, show the answer
+                if (userAnswers[currentQuestionIndex]) {
+                    answered = true;
+                    const userAnswer = userAnswers[currentQuestionIndex].userAnswer;
+                    const question = questions[currentQuestionIndex];
+                    
+                    document.getElementById(`option${userAnswer}`).checked = true;
+                    document.querySelectorAll('.option')[userAnswer].classList.add('selected');
+                    
+                    // Highlight options
+                    document.querySelectorAll('.option').forEach((opt, index) => {
+                        opt.classList.add('disabled');
+                        if (index === question.correct) {
+                            opt.classList.add('correct');
+                        } else if (index === userAnswer && userAnswer !== question.correct) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
+
+                    const feedback = document.getElementById('feedback');
+                    const isCorrect = userAnswer === question.correct;
+                    feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+                    feedback.innerHTML = `
+                        <div class="feedback-title">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</div>
+                        <div>${question.explanation}</div>
+                    `;
+
+                    document.getElementById('checkBtn').style.display = 'none';
+                    document.getElementById('nextBtn').style.display = 'inline-block';
+                }
+                
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const answeredQuestions = userAnswers.filter(a => a !== undefined).length;
+            const progress = (answeredQuestions / questions.length) * 100;
+            
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressBar').textContent = Math.round(progress) + '%';
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('totalQuestions').textContent = questions.length;
+            document.getElementById('correctAnswers').textContent = correctCount;
+            document.getElementById('incorrectAnswers').textContent = incorrectCount;
+        }
+
+        function showResults() {
+            document.getElementById('quizScreen').classList.remove('active');
+            document.getElementById('resultsScreen').classList.add('active');
+
+            const percentage = Math.round((correctCount / questions.length) * 100);
+            document.getElementById('finalScore').textContent = percentage + '%';
+            document.getElementById('finalCorrect').textContent = correctCount;
+            document.getElementById('finalIncorrect').textContent = incorrectCount;
+            document.getElementById('finalTotal').textContent = questions.length;
+
+            // Determine grade
+            let gradeMessage = '';
+            let gradeClass = '';
+            
+            if (percentage >= 85) {
+                gradeMessage = '🌟 Distinction - Outstanding Performance!';
+                gradeClass = 'grade-distinction';
+            } else if (percentage >= 75) {
+                gradeMessage = '⭐ Merit - Excellent Work!';
+                gradeClass = 'grade-merit';
+            } else if (percentage >= 65) {
+                gradeMessage = '✓ Pass - Good Job!';
+                gradeClass = 'grade-pass';
+            } else {
+                gradeMessage = '✗ Below Pass - Keep Practicing!';
+                gradeClass = 'grade-fail';
+            }
+
+            const gradeDiv = document.getElementById('gradeMessage');
+            gradeDiv.textContent = gradeMessage;
+            gradeDiv.className = `grade-message ${gradeClass}`;
+
+            // Show review
+            const reviewList = document.getElementById('reviewList');
+            reviewList.innerHTML = '';
+
+            userAnswers.forEach((answer, index) => {
+                const reviewItem = document.createElement('div');
+                reviewItem.className = `review-item ${answer.isCorrect ? 'correct' : 'incorrect'}`;
+                
+                let html = `
+                    <div class="review-question">Q${index + 1}: ${answer.question}</div>
+                    <div class="review-answer">
+                `;
+                
+                if (!answer.isCorrect) {
+                    html += `
+                        <div class="your-answer"><strong>Your answer:</strong> ${answer.options[answer.userAnswer]}</div>
+                        <div class="correct-answer"><strong>Correct answer:</strong> ${answer.options[answer.correctAnswer]}</div>
+                    `;
+                } else {
+                    html += `<div class="correct-answer"><strong>Your answer:</strong> ${answer.options[answer.userAnswer]} ✓</div>`;
+                }
+                
+                html += `</div>`;
+                reviewItem.innerHTML = html;
+                reviewList.appendChild(reviewItem);
+            });
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            correctCount = 0;
+            incorrectCount = 0;
+            userAnswers = [];
+            answered = false;
+
+            document.getElementById('resultsScreen').classList.remove('active');
+            document.getElementById('startScreen').classList.add('active');
+            updateProgress();
+        }
+    </script>
+</body>
+</html>
