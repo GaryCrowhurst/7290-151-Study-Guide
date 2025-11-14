@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7290-727/777 Study Guide | Basic Routine Vehicle Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-tab {
+            padding: 14px 18px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            touch-action: manipulation;
+        }
+
+        .nav-tab:active {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            color: #2a5298;
+            border-bottom-color: #06b6d4;
+            background: white;
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #06b6d4;
+        }
+
+        .section-header {
+            color: #2a5298;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flashcard {
+            height: 180px;
+            perspective: 1000px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .flashcard-back {
+            background: white;
+            border: 2px solid #06b6d4;
+            transform: rotateY(180deg);
+            font-size: 0.9rem;
+            color: #2c3e50;
+            overflow-y: auto;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            border-left: 4px solid #06b6d4;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-card h4 {
+            color: #2a5298;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .quick-ref-card {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .quick-ref-card h4 {
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .quick-ref-card p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .tip-box strong {
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .flashcard-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .flashcard {
+                height: 200px;
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .nav-tab {
+                padding: 15px 20px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            body {
+                padding: 20px;
+            }
+
+            .header {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .section-header {
+                font-size: 1.5rem;
+            }
+
+            .flashcard-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .nav-tab {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .flashcard-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Unit 7290-727/777 Study Guide</h1>
+            <p>Carry out Basic Routine Vehicle Maintenance - Level 1 | Interactive Learning Resource</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">📋 Overview</button>
+            <button class="nav-tab" onclick="showTab('flashcards')">🎴 Flashcards</button>
+            <button class="nav-tab" onclick="showTab('systems')">⚙️ Systems</button>
+            <button class="nav-tab" onclick="showTab('quick-ref')">📖 Quick Ref</button>
+        </div>
+
+        <div class="content">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <h2 class="section-header">Unit Overview</h2>
+                
+                <div class="info-card">
+                    <h3>🎯 Unit Details</h3>
+                    <p><strong>Unit Number:</strong> 7290-727/777</p>
+                    <p><strong>Level:</strong> Level 1</p>
+                    <p><strong>GLH:</strong> 90 hours</p>
+                    <p><strong>Assessment:</strong> Multiple choice test (Evolve) AND Assignment</p>
+                    <p><strong>Age Group:</strong> 14+</p>
+                    <p><strong>Grading:</strong> Pass/Merit/Distinction</p>
+                    <ul>
+                        <li><strong>Pass:</strong> 65% or above</li>
+                        <li><strong>Merit:</strong> 75% or above</li>
+                        <li><strong>Distinction:</strong> 85% or above</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📚 What You'll Learn - All 11 Learning Outcomes</h3>
+                    <p>This comprehensive unit covers ALL the basic vehicle systems:</p>
+                    
+                    <h4>LO1: Purpose of Routine Maintenance</h4>
+                    <ul>
+                        <li>Purpose of routine maintenance</li>
+                        <li>Observing timescales and documentation</li>
+                        <li>Sources of information and regulations</li>
+                        <li>Inspection methods and vehicle protection</li>
+                    </ul>
+
+                    <h4>LO2: Petrol and Diesel Engines</h4>
+                    <ul>
+                        <li>Four-stroke petrol engine principles</li>
+                        <li>Four-stroke diesel engine principles</li>
+                        <li>Engine components and functions</li>
+                        <li>Engine configurations (inline, vee, flat)</li>
+                        <li>Exhaust and air supply systems</li>
+                    </ul>
+
+                    <h4>LO3: Lubrication and Cooling Systems</h4>
+                    <ul>
+                        <li>Engine lubrication principles</li>
+                        <li>Oil types, grades, and maintenance</li>
+                        <li>Cooling system operation</li>
+                        <li>Liquid cooling components</li>
+                        <li>Coolant and antifreeze</li>
+                    </ul>
+
+                    <h4>LO4: Ignition and Petrol Fuel Systems</h4>
+                    <ul>
+                        <li>Ignition system components</li>
+                        <li>Spark plugs and ignition timing</li>
+                        <li>Petrol safety and regulations</li>
+                        <li>Fuel injection systems</li>
+                        <li>Fuel atomisation principles</li>
+                    </ul>
+
+                    <h4>LO5: Diesel Fuel Systems</h4>
+                    <ul>
+                        <li>Diesel safety and regulations</li>
+                        <li>Diesel fuel system principles</li>
+                        <li>Injection pumps and injectors</li>
+                        <li>Cold starting aids (glow plugs)</li>
+                        <li>Fuel filters and water traps</li>
+                    </ul>
+
+                    <h4>LO6: Clutches and Gearboxes</h4>
+                    <ul>
+                        <li>Clutch function and operation</li>
+                        <li>Clutch components (pressure plate, driven plate)</li>
+                        <li>Manual gearbox operation</li>
+                        <li>Automatic gearbox basics</li>
+                        <li>Gear selector mechanisms</li>
+                    </ul>
+
+                    <h4>LO7: Driveline and Final Drive</h4>
+                    <ul>
+                        <li>Drive shafts and universal joints</li>
+                        <li>Constant velocity (CV) joints</li>
+                        <li>Final drive gears</li>
+                        <li>Differentials</li>
+                        <li>Hubs, bearings, and half shafts</li>
+                    </ul>
+
+                    <h4>LO8: Steering Systems</h4>
+                    <ul>
+                        <li>Steering system functions</li>
+                        <li>Steering boxes and linkages</li>
+                        <li>Power steering systems</li>
+                        <li>Steering geometry and alignment</li>
+                    </ul>
+
+                    <h4>LO9: Suspension, Wheels & Tyres</h4>
+                    <ul>
+                        <li>Suspension types (independent/non-independent)</li>
+                        <li>Springs, dampers, and struts</li>
+                        <li>Tyre legal requirements</li>
+                        <li>Tyre markings and construction</li>
+                        <li>Wheel types and construction</li>
+                    </ul>
+
+                    <h4>LO10: Braking Systems</h4>
+                    <ul>
+                        <li>Disc and drum brake systems</li>
+                        <li>Hydraulic brake components</li>
+                        <li>Anti-lock braking (ABS)</li>
+                        <li>Brake maintenance requirements</li>
+                        <li>Brake fluid specifications</li>
+                    </ul>
+
+                    <h4>LO11: Electrical and Electronic Systems</h4>
+                    <ul>
+                        <li>Battery and charging systems</li>
+                        <li>Alternator and starter motor</li>
+                        <li>Lighting systems</li>
+                        <li>Auxiliary systems (heating, ventilation)</li>
+                        <li>Electrical wiring diagrams</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <strong>💡 Study Tips</strong>
+                    <p>This is a BIG unit covering everything! Use the flashcards to learn key terms, then study each system in detail. Practice with the quiz regularly. Focus on understanding HOW things work, not just memorizing facts.</p>
+                </div>
+            </div>
+
+            <!-- Flashcards Tab -->
+            <div id="flashcards" class="tab-content">
+                <h2 class="section-header">Interactive Flashcards</h2>
+                <p style="margin-bottom: 20px;">Click any card to flip and reveal the answer. Master these key concepts!</p>
+
+                <input type="text" class="search-box" id="flashcardSearch" placeholder="🔍 Search flashcards..." onkeyup="filterFlashcards()">
+
+                <div class="flashcard-container" id="flashcardContainer">
+                    <!-- Flashcards will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Systems Tab -->
+            <div id="systems" class="tab-content">
+                <h2 class="section-header">Vehicle Systems Explained</h2>
+
+                <div class="info-card">
+                    <h3>🔧 Engine Systems</h3>
+                    <h4>Four-Stroke Cycle</h4>
+                    <p><strong>1. Intake:</strong> Piston moves down, intake valve opens, air/fuel mixture enters cylinder</p>
+                    <p><strong>2. Compression:</strong> Both valves close, piston moves up, compresses mixture</p>
+                    <p><strong>3. Power:</strong> Spark ignites mixture (petrol) or fuel injected into hot air (diesel), explosion pushes piston down</p>
+                    <p><strong>4. Exhaust:</strong> Exhaust valve opens, piston moves up, pushes burnt gases out</p>
+                    
+                    <h4>Engine Configurations</h4>
+                    <ul>
+                        <li><strong>Inline:</strong> Cylinders in a straight line (e.g., 4-cylinder inline)</li>
+                        <li><strong>Vee:</strong> Two banks of cylinders at an angle (e.g., V6, V8)</li>
+                        <li><strong>Flat:</strong> Cylinders opposite each other, horizontally (e.g., Boxer engine)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🛢️ Lubrication System</h3>
+                    <p><strong>Purpose:</strong> Reduce friction, cool components, clean internals, seal gaps</p>
+                    <h4>Components:</h4>
+                    <ul>
+                        <li><strong>Sump (Oil Pan):</strong> Stores oil at bottom of engine</li>
+                        <li><strong>Oil Pump:</strong> Pumps oil around engine</li>
+                        <li><strong>Oil Filter:</strong> Removes dirt and metal particles</li>
+                        <li><strong>Oil Galleries:</strong> Passages that carry oil to bearings</li>
+                        <li><strong>Pressure Relief Valve:</strong> Prevents excessive pressure</li>
+                    </ul>
+                    <h4>Oil Types:</h4>
+                    <ul>
+                        <li><strong>Mineral Oil:</strong> Refined from crude oil</li>
+                        <li><strong>Synthetic Oil:</strong> Chemically engineered, better performance</li>
+                        <li><strong>Semi-Synthetic:</strong> Blend of mineral and synthetic</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>💧 Cooling System</h3>
+                    <p><strong>Purpose:</strong> Keep engine at optimal temperature (around 90°C)</p>
+                    <h4>Main Components:</h4>
+                    <ul>
+                        <li><strong>Radiator:</strong> Cools hot coolant using airflow</li>
+                        <li><strong>Water Pump:</strong> Circulates coolant through system</li>
+                        <li><strong>Thermostat:</strong> Controls coolant flow to maintain temperature</li>
+                        <li><strong>Cooling Fan:</strong> Pulls air through radiator</li>
+                        <li><strong>Expansion Tank:</strong> Allows for coolant expansion</li>
+                        <li><strong>Hoses:</strong> Connect components</li>
+                    </ul>
+                    <h4>Coolant (Antifreeze):</h4>
+                    <p>Mix of water and ethylene glycol. Prevents freezing (to -37°C), prevents boiling (to 120°C+), prevents corrosion, lubricates water pump.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>⚡ Ignition System (Petrol)</h3>
+                    <h4>Components:</h4>
+                    <ul>
+                        <li><strong>Battery:</strong> Provides electrical power</li>
+                        <li><strong>Ignition Switch:</strong> Controls system on/off</li>
+                        <li><strong>Ignition Coil:</strong> Steps up voltage to 20,000-40,000 volts</li>
+                        <li><strong>Spark Plugs:</strong> Create spark to ignite mixture</li>
+                        <li><strong>ECU:</strong> Controls ignition timing</li>
+                    </ul>
+                    <p><strong>Why Timing Matters:</strong> Spark must occur at exactly the right moment. Too early = pinging/knocking. Too late = power loss.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🚗 Transmission System</h3>
+                    <h4>Clutch (Manual Cars):</h4>
+                    <ul>
+                        <li><strong>Flywheel:</strong> Bolted to engine crankshaft</li>
+                        <li><strong>Pressure Plate:</strong> Clamps clutch disc to flywheel</li>
+                        <li><strong>Clutch Disc:</strong> Friction material, connects to gearbox</li>
+                        <li><strong>Release Bearing:</strong> Pushes on pressure plate when pedal pressed</li>
+                    </ul>
+                    <h4>Gearbox Purpose:</h4>
+                    <p>Engines work best at certain RPM. Gearbox changes the ratio between engine speed and wheel speed:</p>
+                    <ul>
+                        <li><strong>Low Gears (1,2):</strong> High torque, low speed - for starting/hills</li>
+                        <li><strong>High Gears (4,5,6):</strong> Low torque, high speed - for cruising</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎯 Steering System</h3>
+                    <h4>Types:</h4>
+                    <ul>
+                        <li><strong>Rack and Pinion:</strong> Most common, direct feel</li>
+                        <li><strong>Recirculating Ball:</strong> Found in trucks, smoother but less direct</li>
+                    </ul>
+                    <h4>Power Steering:</h4>
+                    <ul>
+                        <li><strong>Hydraulic:</strong> Uses fluid pump driven by engine</li>
+                        <li><strong>Electric (EPAS):</strong> Uses electric motor, more efficient</li>
+                    </ul>
+                    <h4>Steering Angles:</h4>
+                    <ul>
+                        <li><strong>Camber:</strong> Tilt of wheel in/out at top</li>
+                        <li><strong>Caster:</strong> Tilt of steering axis forward/back</li>
+                        <li><strong>Toe:</strong> Whether wheels point in or out</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🌀 Suspension System</h3>
+                    <p><strong>Purpose:</strong> Absorb bumps, keep tyres on road, provide comfortable ride, help handling</p>
+                    <h4>Types:</h4>
+                    <ul>
+                        <li><strong>Independent:</strong> Each wheel moves separately (better ride, handling)</li>
+                        <li><strong>Non-Independent:</strong> Wheels connected by solid axle (simpler, stronger)</li>
+                    </ul>
+                    <h4>Components:</h4>
+                    <ul>
+                        <li><strong>Springs:</strong> Support weight, absorb bumps (coil, leaf, torsion bar)</li>
+                        <li><strong>Shock Absorbers:</strong> Control spring oscillation, prevent bouncing</li>
+                        <li><strong>Struts:</strong> Combined spring and shock in one unit (MacPherson strut)</li>
+                        <li><strong>Control Arms:</strong> Connect wheels to chassis, allow movement</li>
+                        <li><strong>Anti-roll Bar:</strong> Reduces body roll in corners</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🛞 Tyres & Wheels</h3>
+                    <h4>Tyre Construction:</h4>
+                    <ul>
+                        <li><strong>Radial:</strong> Modern standard, plies run radially (90° to tread)</li>
+                        <li><strong>Bias/Cross-Ply:</strong> Old type, plies run diagonally</li>
+                        <li><strong>Tubeless:</strong> No inner tube, air sealed by bead on rim</li>
+                    </ul>
+                    <h4>Tyre Marking Example: 195/65 R15 91H</h4>
+                    <ul>
+                        <li><strong>195:</strong> Width in millimeters</li>
+                        <li><strong>65:</strong> Aspect ratio (sidewall height as % of width)</li>
+                        <li><strong>R:</strong> Radial construction</li>
+                        <li><strong>15:</strong> Rim diameter in inches</li>
+                        <li><strong>91:</strong> Load index (max weight per tyre)</li>
+                        <li><strong>H:</strong> Speed rating (H = 130 mph max)</li>
+                    </ul>
+                    <h4>Legal Requirements (UK):</h4>
+                    <ul>
+                        <li>Minimum tread depth: 1.6mm across central 3/4 of tread</li>
+                        <li>No cuts deeper than 25mm or 10% of section width</li>
+                        <li>No exposed cords or ply</li>
+                        <li>Correct inflation pressure</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🛑 Braking System</h3>
+                    <h4>Disc Brakes:</h4>
+                    <ul>
+                        <li><strong>Brake Disc:</strong> Rotates with wheel</li>
+                        <li><strong>Brake Caliper:</strong> Houses pistons and brake pads</li>
+                        <li><strong>Brake Pads:</strong> Friction material, squeeze disc to slow wheel</li>
+                    </ul>
+                    <h4>Drum Brakes:</h4>
+                    <ul>
+                        <li><strong>Brake Drum:</strong> Rotates with wheel</li>
+                        <li><strong>Brake Shoes:</strong> Friction material, push outward against drum</li>
+                        <li><strong>Wheel Cylinder:</strong> Pushes shoes outward</li>
+                    </ul>
+                    <h4>Hydraulic System:</h4>
+                    <p>Pressing brake pedal pushes piston in master cylinder → pressurizes brake fluid → pushes pistons in calipers/wheel cylinders → applies brakes</p>
+                    <h4>ABS (Anti-lock Braking System):</h4>
+                    <p>Sensors detect wheel lock-up. ECU rapidly releases and reapplies brakes (up to 15 times/second) to maintain steering control during emergency braking.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>⚡ Electrical System</h3>
+                    <h4>Battery:</h4>
+                    <ul>
+                        <li>12V lead-acid battery (6 cells × 2V each)</li>
+                        <li>Stores energy chemically</li>
+                        <li>Provides high current for starting (200-400 amps)</li>
+                        <li>Powers accessories when engine off</li>
+                    </ul>
+                    <h4>Charging System:</h4>
+                    <ul>
+                        <li><strong>Alternator:</strong> Generates AC electricity (converted to DC)</li>
+                        <li><strong>Drive Belt:</strong> Drives alternator from crankshaft</li>
+                        <li><strong>Voltage Regulator:</strong> Controls charging voltage (typically 13.8-14.4V)</li>
+                    </ul>
+                    <h4>Starting System:</h4>
+                    <ul>
+                        <li><strong>Starter Motor:</strong> Powerful electric motor</li>
+                        <li><strong>Starter Solenoid:</strong> Engages starter to flywheel ring gear</li>
+                        <li><strong>Flywheel Ring Gear:</strong> Gear on flywheel that starter meshes with</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quick Reference Tab -->
+            <div id="quick-ref" class="tab-content">
+                <h2 class="section-header">Quick Reference Guide</h2>
+
+                <div class="quick-ref-grid">
+                    <div class="quick-ref-card">
+                        <h4>🔄 Four Strokes</h4>
+                        <p>1. Intake 2. Compression 3. Power 4. Exhaust = 2 crank revolutions</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🛢️ Oil Check</h4>
+                        <p>Engine cold, level ground, check dipstick, should be between MIN and MAX marks</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>💧 Coolant Mix</h4>
+                        <p>50/50 antifreeze to water protects to -37°C and raises boiling point</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>⚡ Spark Timing</h4>
+                        <p>Spark must occur at correct moment (before TDC) for max power</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🚗 Clutch Function</h4>
+                        <p>Disconnects/connects engine to gearbox for gear changes</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>⚙️ Differential</h4>
+                        <p>Allows wheels to rotate at different speeds when cornering</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🛞 Legal Tread</h4>
+                        <p>Minimum 1.6mm across central 3/4 of tread width</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🛑 Brake Types</h4>
+                        <p>Disc (caliper + pads) or Drum (shoes + wheel cylinder)</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🔋 Battery Voltage</h4>
+                        <p>12.6V fully charged, 13.8-14.4V when charging, below 12.4V needs charge</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🎯 Camber</h4>
+                        <p>Wheel tilt top in/out. Affects tyre wear and handling</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>🌀 Shock Absorbers</h4>
+                        <p>Control springs, prevent bouncing, keep tyres on road</p>
+                    </div>
+                    <div class="quick-ref-card">
+                        <h4>⚠️ PPE</h4>
+                        <p>Safety glasses, gloves, steel-toe boots, overalls always!</p>
+                    </div>
+                </div>
+
+                <div class="info-card" style="margin-top: 30px;">
+                    <h3>📋 Inspection Techniques</h3>
+                    <ul>
+                        <li><strong>Visual:</strong> Look for damage, leaks, wear, corrosion, loose parts</li>
+                        <li><strong>Aural (Listening):</strong> Listen for unusual noises, knocks, squeals</li>
+                        <li><strong>Functional:</strong> Test operation - do things work properly?</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📝 Important Regulations</h3>
+                    <ul>
+                        <li><strong>Road Traffic Act:</strong> Vehicles must be roadworthy</li>
+                        <li><strong>MOT Regulations:</strong> Annual test for vehicles 3+ years old</li>
+                        <li><strong>Highway Code:</strong> Rules for using roads safely</li>
+                        <li><strong>Construction & Use:</strong> Technical vehicle requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const flashcards = [
+            { term: "Four-Stroke Cycle", definition: "Intake, Compression, Power, Exhaust - completes in 2 crankshaft rotations (720°)" },
+            { term: "Compression Ratio", definition: "Ratio of cylinder volume at BDC to volume at TDC. Higher ratio = more power but needs higher octane fuel" },
+            { term: "TDC", definition: "Top Dead Centre - piston at highest point in cylinder" },
+            { term: "BDC", definition: "Bottom Dead Centre - piston at lowest point in cylinder" },
+            { term: "Sump", definition: "Oil pan at bottom of engine that stores oil when engine is off" },
+            { term: "Viscosity", definition: "Thickness of oil. Thinner when hot, thicker when cold. Multi-grade oils maintain better viscosity across temperatures" },
+            { term: "Thermostat", definition: "Valve that controls coolant flow to maintain engine temperature around 90°C" },
+            { term: "Antifreeze", definition: "Ethylene glycol mixed with water to prevent freezing, boiling, and corrosion in cooling system" },
+            { term: "Spark Plug", definition: "Creates high-voltage spark to ignite air-fuel mixture in petrol engines" },
+            { term: "Ignition Timing", definition: "When the spark occurs in relation to piston position. Affects power, efficiency, and emissions" },
+            { term: "Glow Plug", definition: "Heating element in diesel engine combustion chamber to aid cold starting" },
+            { term: "Compression Ignition", definition: "How diesel engines ignite fuel - compression heat (no spark plugs needed)" },
+            { term: "Clutch", definition: "Device that disconnects and connects engine from gearbox for gear changes" },
+            { term: "Flywheel", definition: "Heavy disc attached to crankshaft that smooths out power pulses and provides surface for clutch" },
+            { term: "CV Joint", definition: "Constant Velocity joint - allows smooth power transfer through varying angles" },
+            { term: "Differential", definition: "Gear system that splits power between wheels and allows them to rotate at different speeds" },
+            { term: "Rack and Pinion", definition: "Common steering system where pinion gear moves steering rack left/right" },
+            { term: "Camber", definition: "Angle of wheel lean in/out at top. Affects tyre wear and handling" },
+            { term: "Independent Suspension", definition: "Each wheel moves independently - better ride and handling than solid axle" },
+            { term: "Shock Absorber", definition: "Damper that controls spring oscillation and prevents bouncing" },
+            { term: "Radial Tyre", definition: "Modern tyre with plies running radially (perpendicular to tread) for better performance" },
+            { term: "Aspect Ratio", definition: "Tyre sidewall height as percentage of width (e.g., 65 in 195/65 R15)" },
+            { term: "Brake Caliper", definition: "Housing containing pistons that squeeze brake pads against disc" },
+            { term: "ABS", definition: "Anti-lock Braking System - prevents wheel lock-up during emergency braking" },
+            { term: "Brake Fluid", definition: "Hydraulic fluid (DOT 3,4,5.1) that transmits pressure from pedal to brakes" },
+            { term: "Alternator", definition: "Generates electricity to charge battery and power electrical systems when engine runs" },
+            { term: "Starter Motor", definition: "Powerful electric motor that cranks engine to start it" },
+            { term: "Lead-Acid Battery", definition: "12V battery (6 cells × 2V) that stores energy chemically for starting and accessories" }
+        ];
+
+        function initializeFlashcards() {
+            const container = document.getElementById('flashcardContainer');
+            flashcards.forEach((card, index) => {
+                const flashcardDiv = document.createElement('div');
+                flashcardDiv.className = 'flashcard';
+                flashcardDiv.innerHTML = `
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            ${card.term}
+                        </div>
+                        <div class="flashcard-back">
+                            ${card.definition}
+                        </div>
+                    </div>
+                `;
+                flashcardDiv.onclick = () => flashcardDiv.classList.toggle('flipped');
+                container.appendChild(flashcardDiv);
+            });
+        }
+
+        function filterFlashcards() {
+            const searchTerm = document.getElementById('flashcardSearch').value.toLowerCase();
+            const flashcardElements = document.querySelectorAll('.flashcard');
+            
+            flashcardElements.forEach((card, index) => {
+                const term = flashcards[index].term.toLowerCase();
+                const definition = flashcards[index].definition.toLowerCase();
+                
+                if (term.includes(searchTerm) || definition.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            event.target.classList.add('active');
+        }
+
+        window.onload = function() {
+            initializeFlashcards();
+        };
+    </script>
+</body>
+</html>

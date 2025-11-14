@@ -660,414 +660,462 @@
     </div>
 
     <script>
-        const questions = [
+        const allQuestions = [
             {
-                question: "When carrying out routine maintenance, which of the following is essential for avoiding injury to yourself and others?",
+                question: "Which of the following best describes the purpose of routine maintenance on light vehicles?",
                 options: [
-                    "Working quickly without checking procedures",
-                    "Using suitable personal protective equipment (PPE)",
-                    "Skipping safety checks to save time",
-                    "Ignoring manufacturer's safety guidelines"
+                    "To enhance vehicle aesthetics only",
+                    "To maintain performance, safety, and legal compliance",
+                    "To increase workshop profitability only",
+                    "To void manufacturer warranties"
                 ],
                 correct: 1,
-                explanation: "Using suitable PPE throughout all maintenance activities is essential for avoiding injury. This includes eye, ear, head, skin, feet, hand, and lung protection as appropriate to the task."
+                explanation: "Routine maintenance ensures vehicles remain safe, perform reliably, meet legal requirements, and maintain warranty compliance whilst preventing unexpected breakdowns."
             },
             {
-                question: "What is the primary environmental concern when disposing of used engine oil?",
+                question: "What is the main reason for following manufacturer-specified service intervals?",
                 options: [
-                    "It takes up too much storage space",
-                    "It has no environmental impact",
-                    "Improper disposal can contaminate soil and water",
-                    "It is too expensive to dispose of properly"
-                ],
-                correct: 2,
-                explanation: "Waste disposal, including used oil and filters, has significant environmental impact. Used oil must be disposed of properly to prevent contamination of soil and water sources."
-            },
-            {
-                question: "When working on hybrid or electric vehicles during routine maintenance, what additional safety consideration is most important?",
-                options: [
-                    "Using standard tools without modification",
-                    "Awareness of high voltage systems and proper isolation procedures",
-                    "Working faster to minimize exposure",
-                    "Avoiding all electrical system checks"
-                ],
-                correct: 1,
-                explanation: "Hybrid and electric vehicles have high voltage systems that require specific safety procedures, including proper isolation and use of appropriate tools and PPE rated for high voltage work."
-            },
-            {
-                question: "Which of the following is NOT a sign of component wear that should be identified during routine maintenance?",
-                options: [
-                    "Damaged components showing visible cracks",
-                    "Corrosion on metal surfaces",
-                    "Brand new components with no use",
-                    "Inadequate fluid levels"
-                ],
-                correct: 2,
-                explanation: "During scheduled routine maintenance, technicians must identify damage, corrosion, inadequate fluid levels, leaks, wear, and security problems. New components with no use would not show signs of wear."
-            },
-            {
-                question: "What assessment method would be most appropriate for checking brake disc condition?",
-                options: [
-                    "Aural (listening) assessment only",
-                    "Visual and measurement assessment",
-                    "Ignoring the brakes entirely",
-                    "Only checking when customer reports a problem"
-                ],
-                correct: 1,
-                explanation: "Checking brake disc condition requires both visual inspection for cracks, scoring, and corrosion, plus measurements of disc thickness against manufacturer specifications to determine serviceability."
-            },
-            {
-                question: "Which of the following systems is NOT typically inspected during routine light vehicle maintenance?",
-                options: [
-                    "Engine systems",
-                    "Transmission and driveline",
-                    "Spacecraft navigation systems",
-                    "Electrical and electronic systems"
-                ],
-                correct: 2,
-                explanation: "Routine light vehicle maintenance includes inspection of engine, chassis, wheels and tyres, transmission and driveline, electrical and electronic systems, exterior vehicle body, vehicle interior, and onboard vehicle displays."
-            },
-            {
-                question: "Why is it important to use the correct sources of technical information for scheduled maintenance?",
-                options: [
-                    "To ensure procedures match vehicle specifications and legal requirements",
-                    "It doesn't matter which information source you use",
-                    "To make the job take longer",
-                    "Only experienced technicians need technical information"
+                    "To maintain warranty validity and ensure components are inspected before failure",
+                    "To increase the frequency of workshop visits",
+                    "Intervals are not important",
+                    "To sell more spare parts"
                 ],
                 correct: 0,
-                explanation: "Using correct sources of technical information ensures maintenance is carried out to manufacturer specifications, meets legal requirements, and follows proper procedures. This prevents damage and ensures safety."
+                explanation: "Manufacturer service intervals are based on extensive testing to ensure components are checked and replaced before failure occurs, maintaining warranty validity and vehicle reliability."
             },
             {
-                question: "What is the purpose of vehicle identification codes?",
+                question: "When checking engine oil level, which condition is necessary for an accurate reading?",
                 options: [
-                    "To make vehicles look more professional",
-                    "To identify specific vehicle specifications, parts, and service requirements",
-                    "They serve no practical purpose",
-                    "Only for manufacturers' internal use"
+                    "Engine must be hot and running",
+                    "Vehicle on level ground with engine switched off for several minutes",
+                    "Vehicle on a slope with engine running",
+                    "Oil level cannot be checked accurately"
                 ],
                 correct: 1,
-                explanation: "Identification codes (VIN, paint codes, option codes, etc.) allow technicians to identify the correct specifications, parts, fluids, and service procedures for that specific vehicle."
+                explanation: "For an accurate oil level reading, the vehicle must be on level ground with the engine switched off for approximately 5 minutes to allow oil to drain back to the sump."
             },
             {
-                question: "When conducting routine maintenance on hybrid vehicles, which additional system requires specific knowledge?",
+                question: "What is the primary purpose of replacing engine oil and filter during routine maintenance?",
                 options: [
-                    "Traditional mechanical braking only",
-                    "Power units including battery and motor systems",
-                    "Standard petrol fuel systems only",
-                    "Conventional exhaust systems only"
+                    "To change the oil colour",
+                    "To remove contaminants and maintain lubrication properties",
+                    "To make the vehicle heavier",
+                    "Oil never needs replacing"
                 ],
                 correct: 1,
-                explanation: "Hybrid vehicles require knowledge of power units (battery packs, electric motors), transmission systems adapted for hybrid operation, and advanced driver assistance systems (ADAS) in addition to conventional systems."
+                explanation: "Oil and filter replacement removes contaminants (metal particles, combustion by-products), restores lubrication properties, and prevents engine wear and damage."
             },
             {
-                question: "Which of the following adjustments might need to be checked during routine maintenance?",
+                question: "Which coolant mixture ratio is typically recommended for UK climates?",
                 options: [
-                    "Clearances, pressures, and tension",
-                    "Vehicle color preferences",
-                    "Radio station presets only",
-                    "Driver seat memory positions only"
+                    "100% antifreeze concentrate",
+                    "50% antifreeze to 50% water",
+                    "90% water to 10% antifreeze",
+                    "Pure water only"
+                ],
+                correct: 1,
+                explanation: "A 50/50 mixture of antifreeze to water provides protection to approximately -37°C, raises the boiling point, prevents corrosion, and lubricates the water pump."
+            },
+            {
+                question: "When inspecting brake fluid level, what additional check should be performed?",
+                options: [
+                    "Check colour and clarity for contamination",
+                    "Taste the fluid",
+                    "Mix with engine oil",
+                    "Add water to top up"
                 ],
                 correct: 0,
-                explanation: "Routine maintenance involves checking and adjusting clearances (valve clearances), settings (idle speed), alignment (tracking), pressures (tyre pressure), tension (belt tension), and fluid levels in engine, transmission, chassis, electrical, and body areas."
+                explanation: "Brake fluid should be checked for level, colour, and clarity. Dark or contaminated fluid indicates moisture absorption and requires replacement to maintain braking performance."
             },
             {
-                question: "What is the correct procedure for checking and replacing lubricants?",
+                question: "What is the correct method for checking tyre tread depth?",
                 options: [
-                    "Use any available oil regardless of specification",
-                    "Check levels, identify recommended grade, and replace as needed",
-                    "Never replace oil between services",
-                    "Only check oil visually without reference to specifications"
+                    "Visual inspection only",
+                    "Use a depth gauge across the central three-quarters of the tread",
+                    "Check only at the tyre edges",
+                    "Tread depth need not be checked"
                 ],
                 correct: 1,
-                explanation: "Proper procedure involves checking oil levels, identifying the recommended grade from technical information, assessing cleanliness, and replacing oil and filters according to service schedules. Using incorrect oil can cause serious engine damage."
+                explanation: "Tread depth must be measured with a depth gauge across the central three-quarters of the tread width, around the entire circumference. Legal minimum is 1.6mm."
             },
             {
-                question: "What are the consequences of using incorrect lubricants or fluids in a vehicle?",
+                question: "When carrying out a visual inspection of drive belts, which condition indicates replacement is required?",
                 options: [
-                    "No consequences - all fluids are the same",
-                    "Potential component damage, reduced performance, and system failure",
-                    "Improved performance in all cases",
-                    "Only cosmetic issues"
+                    "Belt is the correct colour",
+                    "Cracks, glazing, or fraying are visible",
+                    "Belt is fitted correctly",
+                    "Belt shows no signs of wear"
                 ],
                 correct: 1,
-                explanation: "Using incorrect lubricants or fluids can cause component damage, seal degradation, reduced lubrication, overheating, system failure, and voiding of warranties. Always use fluids meeting manufacturer specifications."
+                explanation: "Drive belts showing cracks, glazing, fraying, or excessive wear must be replaced to prevent failure which could result in loss of charging, cooling, or power steering."
             },
             {
-                question: "When should cosmetic damage found during routine maintenance be reported?",
+                question: "What is the primary purpose of inspecting brake disc thickness during routine maintenance?",
                 options: [
-                    "Never - it's not the technician's responsibility",
-                    "Only if it affects mechanical function",
-                    "When it's outside normal service items and may affect customer satisfaction",
-                    "Only if the customer specifically asks about it"
-                ],
-                correct: 2,
-                explanation: "Technicians should recognize and report cosmetic damage outside normal service items, as this protects both the workshop (documenting pre-existing damage) and informs the customer about the vehicle's condition."
-            },
-            {
-                question: "What is the proper procedure when delays occur during routine maintenance?",
-                options: [
-                    "Continue working without informing anyone",
-                    "Report delays and referral of problems to relevant person(s) promptly",
-                    "Complete the job regardless of how long it takes",
-                    "Abandon the work without explanation"
-                ],
-                correct: 1,
-                explanation: "Professional practice requires reporting anticipated delays and problems to relevant personnel promptly. This allows for customer communication, work schedule adjustments, and appropriate resource allocation."
-            },
-            {
-                question: "Why must operating specifications and tolerances be identified for systems during maintenance?",
-                options: [
-                    "They are not important for routine maintenance",
-                    "To determine if components are within acceptable limits and safe to use",
-                    "Only for warranty purposes",
-                    "To make the job more complicated"
-                ],
-                correct: 1,
-                explanation: "Operating specifications and tolerances define acceptable limits for system operation. Checking these ensures components are safe, legal, and functional, including for hybrid/electric vehicle systems."
-            },
-            {
-                question: "Which document type would contain legal requirements for vehicle maintenance?",
-                options: [
-                    "Workshop posters only",
-                    "Technical service bulletins, MOT testing manual, and legislation",
-                    "Customer preference forms",
-                    "Advertising brochures"
-                ],
-                correct: 1,
-                explanation: "Legal requirements for vehicle maintenance are found in legislation (Construction & Use regulations), MOT testing manuals, technical service bulletins, and manufacturer guidelines that reference legal standards."
-            },
-            {
-                question: "What is the relationship between time and costs in vehicle maintenance?",
-                options: [
-                    "There is no relationship between time and costs",
-                    "Time directly affects labor costs and customer satisfaction",
-                    "Costs decrease as time increases",
-                    "Time is unlimited in professional workshops"
-                ],
-                correct: 1,
-                explanation: "Time management is critical in professional workshops. Time directly relates to labor costs, customer satisfaction, and profitability. Working to agreed timescales while maintaining quality is essential."
-            },
-            {
-                question: "Why is signing workplace documentation and vehicle records important?",
-                options: [
-                    "It looks professional but serves no real purpose",
-                    "It provides accountability, traceability, and legal compliance",
-                    "Only managers need to sign documents",
-                    "Electronic systems make signatures unnecessary"
-                ],
-                correct: 1,
-                explanation: "Signing documentation provides accountability for work performed, enables traceability for quality and warranty purposes, meets legal requirements, and confirms work completion to agreed standards."
-            },
-            {
-                question: "What is the purpose of manufacturers' warranty requirements relating to routine maintenance?",
-                options: [
-                    "To make work more difficult for technicians",
-                    "To ensure warranty validity through proper maintenance using correct parts and procedures",
-                    "They have no real purpose",
-                    "Only to benefit the manufacturer"
-                ],
-                correct: 1,
-                explanation: "Warranty requirements specify maintenance schedules, approved parts, and procedures that must be followed to maintain warranty coverage. Non-compliance can void warranties and affect customers' rights."
-            },
-            {
-                question: "Which inspection technique would be most appropriate for detecting a small coolant leak?",
-                options: [
-                    "Aural (listening) only",
-                    "Visual inspection and pressure testing",
-                    "Ignoring small leaks as insignificant",
-                    "Only checking when engine overheats"
-                ],
-                correct: 1,
-                explanation: "Detecting coolant leaks requires visual inspection of hoses, connections, and components, often combined with pressure testing using specialized equipment to identify small leaks before they cause overheating issues."
-            },
-            {
-                question: "What equipment should be calibrated to meet manufacturers' and legal requirements?",
-                options: [
-                    "Only hand tools need calibration",
-                    "Test instruments, emission equipment, wheel alignment, and headlight aim equipment",
-                    "No equipment requires calibration",
-                    "Only equipment over 5 years old"
-                ],
-                correct: 1,
-                explanation: "Test instruments, emission testing equipment, wheel alignment systems, headlight beam setting equipment, and torque wrenches must be regularly calibrated to ensure accurate readings and legal compliance."
-            },
-            {
-                question: "When checking engine oil during routine maintenance, what should be assessed?",
-                options: [
-                    "Only the oil level",
-                    "Level, cleanliness, correct grade, and condition",
-                    "Just look at the color",
-                    "Oil checks are unnecessary"
-                ],
-                correct: 1,
-                explanation: "Comprehensive oil checking includes verifying correct level, assessing cleanliness and condition (contamination, discoloration), confirming correct grade for the vehicle, and checking for proper disposal methods."
-            },
-            {
-                question: "What information about tyres must be checked during routine maintenance?",
-                options: [
-                    "Brand preference only",
-                    "Pressure, tread depth, condition, and legal compliance",
-                    "Only when customer reports a problem",
-                    "Color and shine"
-                ],
-                correct: 1,
-                explanation: "Tyre inspection includes checking pressures against specifications, measuring tread depth for legal compliance (1.6mm minimum), inspecting for damage, wear patterns, age, and proper fitting."
-            },
-            {
-                question: "Which fluid is part of exhaust emissions treatment systems in modern vehicles?",
-                options: [
-                    "Windscreen washer fluid",
-                    "AdBlue/DEF (Diesel Exhaust Fluid) in SCR systems",
-                    "Standard motor oil",
-                    "Brake fluid"
-                ],
-                correct: 1,
-                explanation: "AdBlue (Diesel Exhaust Fluid) is used in Selective Catalytic Reduction (SCR) systems to reduce NOx emissions in diesel vehicles. Checking and replenishing this fluid is part of routine maintenance."
-            },
-            {
-                question: "What is the correct procedure for checking drive belt condition?",
-                options: [
-                    "Visual inspection for cracks, glazing, proper tension, and alignment",
-                    "Only check if belt breaks",
-                    "Belts never need checking",
-                    "Only listen for squealing noises"
+                    "To determine if replacement is required before reaching minimum thickness",
+                    "To check disc colour",
+                    "Disc thickness is not important",
+                    "To validate parking brake operation only"
                 ],
                 correct: 0,
-                explanation: "Drive belt inspection involves visual checking for cracks, fraying, glazing, and damage, measuring or checking tension against specifications, and verifying proper alignment on pulleys."
+                explanation: "Brake discs wear through use. Measuring thickness against manufacturer specifications determines if replacement is required before reaching the minimum safe thickness."
             },
             {
-                question: "Why must brake components be checked during routine maintenance?",
+                question: "Which tool is specifically designed for measuring brake disc runout?",
                 options: [
-                    "It's not necessary if brakes are working",
-                    "To ensure legal compliance and safety before wear becomes critical",
-                    "Only for MOT purposes",
-                    "To increase service costs unnecessarily"
+                    "Vernier calliper",
+                    "Dial test indicator (DTI)",
+                    "Torque wrench",
+                    "Feeler gauge"
                 ],
                 correct: 1,
-                explanation: "Brake system inspection is critical for safety and legal compliance. Checking pad/lining thickness, disc/drum condition, and hydraulic system integrity prevents brake failure and ensures legal roadworthiness."
+                explanation: "A dial test indicator (DTI) measures disc runout (lateral movement) when the disc is rotated, identifying warping or distortion that could cause brake judder."
             },
             {
-                question: "What should be checked in the vehicle interior during routine maintenance?",
+                question: "When checking battery terminals, what condition requires immediate attention?",
                 options: [
-                    "Only seat cleanliness",
-                    "Comfort systems, convenience features, warning lights, and safety systems",
-                    "Nothing - interiors aren't part of maintenance",
-                    "Only if customer complains"
+                    "Terminals are clean and tight",
+                    "Presence of white or blue-green corrosion on terminals",
+                    "Battery is correctly secured",
+                    "Electrolyte level is correct"
                 ],
                 correct: 1,
-                explanation: "Interior checks include operation of comfort and convenience systems (climate control, infotainment), warning lights and displays, safety systems (airbag indicators, seatbelt systems), and overall functionality."
+                explanation: "Corrosion on battery terminals (white powder or blue-green deposits) increases resistance, impairs electrical connections, and must be cleaned to ensure reliable starting and charging."
             },
             {
-                question: "What is the purpose of diagnostic and fault code readers in routine maintenance?",
+                question: "What is the correct procedure for checking headlight beam alignment?",
                 options: [
-                    "They are only used for major repairs",
-                    "To identify stored fault codes, monitor live data, and verify system operation",
-                    "They serve no purpose in routine maintenance",
-                    "Only dealers can use these tools"
+                    "Visual observation whilst driving",
+                    "Use beam-setting equipment on a level surface with correct tyre pressures",
+                    "Compare with other vehicles",
+                    "Alignment does not require checking"
                 ],
                 correct: 1,
-                explanation: "Diagnostic tools check for stored fault codes, monitor live sensor data, verify system operation, perform system tests, and confirm repairs. They're essential for modern vehicle maintenance including hybrid/electric vehicles."
+                explanation: "Headlight beam alignment must be checked using beam-setting equipment with the vehicle on a level surface, correct tyre pressures, and appropriate loading to ensure beams meet legal requirements."
             },
             {
-                question: "When should hydraulic fluids be checked during routine maintenance?",
+                question: "When inspecting shock absorbers, what test indicates they require replacement?",
                 options: [
-                    "Only when systems fail",
-                    "At regular intervals checking level, condition, and for leaks",
-                    "Hydraulic fluids never need checking",
-                    "Only during major services"
+                    "Shock absorber is clean",
+                    "Vehicle bounces more than twice after being pushed down and released",
+                    "Shock absorber has no visible damage",
+                    "Vehicle sits level"
                 ],
                 correct: 1,
-                explanation: "Hydraulic fluids (brake fluid, power steering fluid, clutch fluid) must be checked regularly for correct levels, condition (contamination, moisture content), and system integrity through leak inspection."
+                explanation: "The bounce test: push the vehicle's corner down firmly and release. If it bounces more than 1-2 times, the shock absorber has lost damping efficiency and requires replacement."
             },
             {
-                question: "What makes Advanced Driver Assistance Systems (ADAS) relevant to routine maintenance?",
+                question: "What is the primary reason for inspecting the exhaust system during routine maintenance?",
                 options: [
-                    "They are not relevant to routine maintenance",
-                    "Calibration after servicing, sensor cleaning, and system function checks are required",
-                    "Only specialized dealers can work on ADAS",
-                    "ADAS requires no maintenance"
+                    "To check for leaks, corrosion, and security of mountings",
+                    "To measure fuel consumption",
+                    "To adjust engine power",
+                    "Exhaust systems do not require inspection"
+                ],
+                correct: 0,
+                explanation: "Exhaust inspection identifies leaks (which allow toxic gases to enter the vehicle), corrosion damage, and loose or broken mountings that could cause failure or excessive noise."
+            },
+            {
+                question: "When checking power steering fluid level, what additional observation should be made?",
+                options: [
+                    "Fluid colour and evidence of contamination",
+                    "Fluid temperature only",
+                    "Fluid age only",
+                    "No additional checks needed"
+                ],
+                correct: 0,
+                explanation: "Power steering fluid should be checked for correct level, colour (should be clear/light amber), and contamination. Dark or contaminated fluid indicates system issues requiring investigation."
+            },
+            {
+                question: "What is the purpose of checking alternator drive belt tension?",
+                options: [
+                    "To ensure efficient power transmission without slipping or excessive wear",
+                    "To increase engine noise",
+                    "Belt tension is not important",
+                    "To reduce charging output"
+                ],
+                correct: 0,
+                explanation: "Correct belt tension ensures efficient power transmission to the alternator without slipping (which reduces charging) or excessive tension (which causes premature bearing failure)."
+            },
+            {
+                question: "When performing a road test after routine maintenance, what should be specifically assessed?",
+                options: [
+                    "Radio reception quality only",
+                    "Braking efficiency, steering response, and unusual noises",
+                    "Maximum speed capability only",
+                    "Fuel economy only"
                 ],
                 correct: 1,
-                explanation: "ADAS systems (parking sensors, cameras, radar, lane departure) require regular cleaning, function testing, and recalibration after certain service procedures like wheel alignment, windscreen replacement, or suspension work to ensure proper operation."
+                explanation: "A post-maintenance road test assesses braking efficiency, steering response, gear selection, unusual noises, and general vehicle operation to verify all systems function correctly."
+            },
+            {
+                question: "What is the correct method for inspecting brake pad thickness?",
+                options: [
+                    "Remove wheel and measure friction material thickness",
+                    "Listen for squealing noises only",
+                    "Visual inspection from above only",
+                    "Brake pads do not require inspection"
+                ],
+                correct: 0,
+                explanation: "Brake pad inspection requires wheel removal to accurately measure friction material thickness and inspect for uneven wear, contamination, or damage."
+            },
+            {
+                question: "When checking tyre pressures, what condition is necessary for an accurate reading?",
+                options: [
+                    "Tyres must be hot after driving",
+                    "Tyres must be cold (vehicle stationary for at least 2 hours)",
+                    "Pressure can be checked at any time",
+                    "Visual inspection is sufficient"
+                ],
+                correct: 1,
+                explanation: "Tyre pressures must be checked when cold (before driving or after 2+ hours stationary) as driving increases pressure by approximately 4-6 psi, giving inaccurate readings."
+            },
+            {
+                question: "What is the purpose of inspecting suspension components during routine maintenance?",
+                options: [
+                    "To identify wear in bushes, ball joints, and shock absorbers",
+                    "To adjust ride height only",
+                    "To change suspension type",
+                    "Suspension requires no inspection"
+                ],
+                correct: 0,
+                explanation: "Suspension inspection identifies wear in bushes, ball joints, track rod ends, and shock absorbers that affect handling, tyre wear, and vehicle safety."
+            },
+            {
+                question: "When checking wheel bearing condition, what indicates potential failure?",
+                options: [
+                    "Smooth, quiet operation",
+                    "Roughness, play, or noise when wheel is rotated",
+                    "Wheel is correctly balanced",
+                    "Wheel rotates freely"
+                ],
+                correct: 1,
+                explanation: "Wheel bearings showing roughness, excessive play, grinding noise, or resistance when rotated indicate wear and require replacement to prevent failure and potential wheel detachment."
+            },
+            {
+                question: "What is the correct procedure for resetting an electronic service indicator?",
+                options: [
+                    "Disconnect battery for 10 minutes",
+                    "Follow manufacturer-specific reset procedure using diagnostic equipment or button sequence",
+                    "Service indicators reset automatically",
+                    "Ignore the service indicator"
+                ],
+                correct: 1,
+                explanation: "Electronic service indicators must be reset using manufacturer-specific procedures, either through diagnostic equipment or a specific button/ignition sequence as detailed in technical documentation."
+            },
+            {
+                question: "When inspecting air filter condition, what indicates replacement is required?",
+                options: [
+                    "Filter is clean and debris-free",
+                    "Filter shows excessive dirt, oil contamination, or damage",
+                    "Filter is correctly fitted",
+                    "Air filters never require replacement"
+                ],
+                correct: 1,
+                explanation: "Air filters showing excessive dirt accumulation, oil contamination, physical damage, or restricted airflow must be replaced to maintain engine performance and efficiency."
+            },
+            {
+                question: "What is the purpose of checking brake disc surface condition during inspection?",
+                options: [
+                    "To identify scoring, cracks, or excessive corrosion requiring attention",
+                    "To verify disc colour",
+                    "Disc surface condition is not relevant",
+                    "To adjust brake fluid level"
+                ],
+                correct: 0,
+                explanation: "Brake disc surface inspection identifies scoring (grooves), cracks, heat spots, or excessive corrosion that reduce braking efficiency and may require disc machining or replacement."
+            },
+            {
+                question: "When documenting maintenance work, what information must be recorded?",
+                options: [
+                    "Weather conditions only",
+                    "Work completed, parts fitted, observations, and recommendations",
+                    "Technician's personal opinions only",
+                    "Vehicle colour and style"
+                ],
+                correct: 1,
+                explanation: "Documentation must include work completed, parts/fluids used, mileage, observations, defects found, recommendations for future work, and technician signature for audit trail and warranty purposes."
+            },
+            {
+                question: "What is the primary purpose of checking engine drive belt alignment?",
+                options: [
+                    "To ensure even wear and prevent premature failure",
+                    "To increase belt noise",
+                    "Alignment is not important",
+                    "To reduce engine power"
+                ],
+                correct: 0,
+                explanation: "Correct belt alignment prevents uneven wear, edge fraying, and premature failure. Misalignment causes excessive side loads on bearings and reduces belt service life."
+            },
+            {
+                question: "When checking transmission fluid level (where applicable), what is the typical requirement?",
+                options: [
+                    "Engine cold and switched off",
+                    "Engine at normal operating temperature with specific gear selection",
+                    "Engine can be at any temperature",
+                    "Transmission fluid level cannot be checked"
+                ],
+                correct: 1,
+                explanation: "Most automatic transmissions require fluid level checks with the engine at normal operating temperature, running, and in a specific gear position (usually Park) for accurate readings."
+            },
+            {
+                question: "What is the correct method for inspecting CV joint protective boots?",
+                options: [
+                    "Visual inspection for splits, cracks, or grease leakage",
+                    "Boots do not require inspection",
+                    "Listen for clicking noises only",
+                    "Check boot colour only"
+                ],
+                correct: 0,
+                explanation: "CV boots must be visually inspected for splits, cracks, perishing, security of clips, and evidence of grease leakage that would allow contamination and joint failure."
+            },
+            {
+                question: "When carrying out an emissions test, what must be considered for hybrid vehicles?",
+                options: [
+                    "Standard test procedures apply identically",
+                    "Engine must be at operating temperature with battery sufficiently charged",
+                    "Hybrid vehicles are exempt from emissions testing",
+                    "Emissions testing is not required"
+                ],
+                correct: 1,
+                explanation: "Hybrid vehicle emissions testing requires the engine to be at operating temperature with the battery sufficiently charged to ensure the engine runs consistently during the test cycle."
+            },
+            {
+                question: "What is the purpose of inspecting brake hoses during routine maintenance?",
+                options: [
+                    "To check for perishing, cracking, bulging, or chafing",
+                    "To verify hose colour",
+                    "Brake hoses do not deteriorate",
+                    "To measure brake fluid temperature"
+                ],
+                correct: 0,
+                explanation: "Brake hoses deteriorate over time, developing cracks, bulges, or chafing that can lead to sudden failure. Regular inspection identifies hoses requiring replacement before failure occurs."
+            },
+            {
+                question: "When checking coolant concentration, what instrument is used?",
+                options: [
+                    "Thermometer",
+                    "Refractometer or antifreeze tester",
+                    "Pressure gauge",
+                    "Voltmeter"
+                ],
+                correct: 1,
+                explanation: "A refractometer or antifreeze tester measures coolant concentration (glycol content) to verify adequate freeze protection and correct mixture ratio for optimal cooling system performance."
+            },
+            {
+                question: "What is the purpose of performing a cooling system pressure test?",
+                options: [
+                    "To identify leaks and verify pressure cap operation",
+                    "To increase coolant temperature",
+                    "To flush the system",
+                    "Pressure testing is unnecessary"
+                ],
+                correct: 0,
+                explanation: "Pressure testing identifies external leaks, internal leaks (head gasket), and verifies the pressure cap opens at the correct pressure to prevent overheating or system damage."
+            },
+            {
+                question: "When inspecting wiper blades, what condition indicates replacement is required?",
+                options: [
+                    "Blades are clean and correctly fitted",
+                    "Splitting, perishing, or poor wiping performance",
+                    "Blades are the correct colour",
+                    "Wiper blades never wear"
+                ],
+                correct: 1,
+                explanation: "Wiper blades showing splitting, perishing, hardening, or causing streaking/chattering must be replaced to maintain adequate visibility and meet MOT requirements."
+            },
+            {
+                question: "What is the correct method for checking clutch operation during routine maintenance?",
+                options: [
+                    "Listen for unusual noises and assess pedal feel and biting point",
+                    "Visual inspection only",
+                    "Clutch operation cannot be assessed",
+                    "Check clutch fluid colour only"
+                ],
+                correct: 0,
+                explanation: "Clutch assessment includes checking pedal feel, biting point height, smoothness of engagement, unusual noises, and any slip under load to identify wear or adjustment requirements."
+            },
+            {
+                question: "When documenting additional defects found during maintenance, what information should be included?",
+                options: [
+                    "Description of defect, location, severity, and safety implications",
+                    "Defect colour only",
+                    "Additional defects should not be recorded",
+                    "Estimate only without description"
+                ],
+                correct: 0,
+                explanation: "Additional defects must be documented with clear descriptions, location, severity assessment, safety implications, and recommendations to inform customers and provide an audit trail."
+            },
+            {
+                question: "What is the purpose of checking steering rack gaiters during inspection?",
+                options: [
+                    "To verify they are intact without splits or grease leakage",
+                    "To check gaiter colour",
+                    "Gaiters do not require inspection",
+                    "To adjust steering angle"
+                ],
+                correct: 0,
+                explanation: "Steering rack gaiters protect internal components from contamination. Split or damaged gaiters allow ingress of dirt and water, causing rapid wear and expensive rack failure."
+            },
+            {
+                question: "When conducting a battery load test, what does the result indicate?",
+                options: [
+                    "Only battery age",
+                    "Battery's ability to deliver cranking current under load",
+                    "Battery colour",
+                    "Battery size only"
+                ],
+                correct: 1,
+                explanation: "A battery load test assesses the battery's ability to deliver sufficient cranking current under load, identifying batteries that hold charge but cannot deliver adequate current for starting."
+            },
+            {
+                question: "What is the correct procedure for inspecting auxiliary drive belt condition?",
+                options: [
+                    "Visual inspection of both sides for cracks, fraying, or contamination",
+                    "Check belt colour only",
+                    "Auxiliary belts do not require inspection",
+                    "Listen for noise only"
+                ],
+                correct: 0,
+                explanation: "Auxiliary belts must be inspected visually on both sides (where accessible) for cracks, fraying, glazing, contamination, and appropriate tension to identify belts requiring replacement."
+            },
+            {
+                question: "When checking brake fluid level, what does a significantly low level indicate?",
+                options: [
+                    "Normal brake pad wear or possible leak requiring investigation",
+                    "Fluid has evaporated",
+                    "Too much fluid was added originally",
+                    "No action required"
+                ],
+                correct: 0,
+                explanation: "Low brake fluid level typically indicates brake pad wear (as calipers extend further) but may also indicate a leak in the hydraulic system requiring immediate investigation."
+            },
+            {
+                question: "What is the purpose of checking exhaust emissions during routine maintenance?",
+                options: [
+                    "To verify compliance with legal limits and identify engine problems",
+                    "To increase fuel consumption",
+                    "Emissions do not require checking",
+                    "To adjust exhaust note"
+                ],
+                correct: 0,
+                explanation: "Emissions testing verifies compliance with legal limits, identifies engine management faults, and detects issues with catalytic converters, air/fuel mixture, or combustion efficiency."
+            },
+            {
+                question: "When inspecting track rod ends, what indicates wear requiring replacement?",
+                options: [
+                    "Components are clean and correctly lubricated",
+                    "Excessive play or movement when levered or rotated",
+                    "Track rods are straight",
+                    "No wear ever occurs"
+                ],
+                correct: 1,
+                explanation: "Track rod ends showing excessive play (movement when levered), perished gaiters, or roughness when rotated indicate wear and must be replaced to maintain steering control and tyre wear."
             }
         ];
 
-        let currentQuestionIndex = 0;
-        let correctCount = 0;
-        let incorrectCount = 0;
-        let userAnswers = [];
-        let answered = false;
-
-        function startQuiz() {
-            document.getElementById('startScreen').classList.remove('active');
-            document.getElementById('quizScreen').classList.add('active');
-            loadQuestion();
-            updateProgress();
-        }
-
-        function loadQuestion() {
-            answered = false;
-            const question = questions[currentQuestionIndex];
-            
-            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-            document.getElementById('questionText').textContent = question.question;
-            
-            const optionsDiv = document.getElementById('options');
-            optionsDiv.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'option';
-                optionDiv.onclick = () => selectOption(index);
-                optionDiv.innerHTML = `
-                    <input type="radio" name="answer" id="option${index}" value="${index}">
-                    <label for="option${index}" style="cursor: pointer; flex: 1;">${option}</label>
-                `;
-                optionsDiv.appendChild(optionDiv);
-            });
-
-            document.getElementById('feedback').classList.remove('show', 'correct', 'incorrect');
-            document.getElementById('checkBtn').style.display = 'inline-block';
-            document.getElementById('nextBtn').style.display = 'none';
-            
-            // Update navigation buttons
-            document.getElementById('prevBtn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
-        }
-
-        function selectOption(index) {
-            if (answered) return;
-            
-            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
-            document.querySelectorAll('.option')[index].classList.add('selected');
-            document.getElementById(`option${index}`).checked = true;
-        }
-
-        function checkAnswer() {
-            if (answered) return;
-            
-            const selectedOption = document.querySelector('input[name="answer"]:checked');
-            if (!selectedOption) {
-                alert('Please select an answer before checking.');
-                return;
-            }
-
-            answered = true;
-            const userAnswer = parseInt(selectedOption.value);
-            const question = questions[currentQuestionIndex];
-            const isCorrect = userAnswer === question.correct;
-
-            userAnswers[currentQuestionIndex] = {
-                question: question.question,
-                userAnswer: userAnswer,
-                correctAnswer: question.correct,
-                isCorrect: isCorrect,
-                options: question.options
-            };
-
-            if (isCorrect) {
-                correctCount++;
-            } else {
+        // Shuffle questions and select 40
+        const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 40);            } else {
                 incorrectCount++;
             }
 
