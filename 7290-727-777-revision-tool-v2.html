@@ -660,7 +660,6 @@
 
     <script>
         const allQuestions = [
-        const allQuestions = [
             // LO1: Purpose of routine maintenance (8 questions)
             {
                 question: "What is the primary purpose of routine vehicle maintenance?",
@@ -1444,7 +1443,8 @@
         ];
 
         // Shuffle questions and select 40
-        const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 40);        let currentQuestionIndex = 0;
+        const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 40);
+        let currentQuestionIndex = 0;
         let correctCount = 0;
         let incorrectCount = 0;
         let userAnswers = [];
