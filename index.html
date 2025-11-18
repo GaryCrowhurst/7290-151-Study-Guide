@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City & Guilds 7290 Revision Hub | Vehicle Maintenance</title>
+    <title>Unit 7290-151 Revision Hub | Routine Light Vehicle Maintenance</title>
     <style>
         * {
             margin: 0;
@@ -17,304 +16,289 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .header {
-            background: white;
-            border-radius: 15px;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .header h1 {
-            color: #2a5298;
             font-size: 1.8rem;
             margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #6c757d;
-            font-size: 1rem;
-            margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         .header .subtitle {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 15px;
+            opacity: 0.9;
+            font-size: 1rem;
+            margin-bottom: 15px;
         }
 
-        .level-section {
-            background: white;
-            border-radius: 15px;
-            padding: 25px 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .level-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #e9ecef;
-        }
-
-        .level-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            white-space: nowrap;
-        }
-
-        .level-badge.level-1 {
-            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-        }
-
-        .level-section.level-1 .unit-info {
-            border-left-color: #06b6d4;
-        }
-
-        .level-section.level-1 .resource-card {
-            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-        }
-
-        .level-title {
-            flex: 1;
-        }
-
-        .level-title h2 {
-            color: #2a5298;
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-
-        .level-title p {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
-        .unit-info {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-        }
-
-        .unit-info h3 {
-            color: #2a5298;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .unit-info p {
-            color: #495057;
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-
-        .unit-info ul {
-            margin-left: 20px;
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             margin-top: 10px;
-            color: #495057;
         }
 
-        .unit-info li {
-            margin-bottom: 5px;
-            font-size: 0.9rem;
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #2a5298;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         .resources-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .resource-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 30px;
             color: white;
             text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            min-height: 48px;
-            touch-action: manipulation;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
 
         .resource-card:active {
-            transform: scale(0.98);
+            transform: translateY(-2px);
         }
 
         .resource-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .resource-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
         }
 
         .resource-card p {
-            font-size: 0.9rem;
             opacity: 0.95;
-            line-height: 1.5;
-        }
-
-        .comparison-section {
-            background: white;
-            border-radius: 15px;
-            padding: 25px 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .comparison-section h2 {
-            color: #2a5298;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .comparison-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 12px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .comparison-table tr:hover {
-            background: #f8f9fa;
-        }
-
-        .tips-section {
-            background: #d1ecf1;
-            border-left: 4px solid #17a2b8;
-            padding: 15px 20px;
-            margin-top: 25px;
-            border-radius: 10px;
-        }
-
-        .tips-section h3 {
-            color: #0c5460;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .tips-section ul {
-            margin-left: 20px;
-            color: #0c5460;
-        }
-
-        .tips-section li {
-            margin-bottom: 8px;
             font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .footer {
-            text-align: center;
-            color: white;
-            padding: 20px;
+        .resource-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .resource-card li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
             font-size: 0.9rem;
             opacity: 0.9;
         }
 
-        @media (min-width: 600px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-
-            .header p {
-                font-size: 1.1rem;
-            }
-
-            .level-section {
-                padding: 30px;
-            }
-
-            .resources-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .comparison-table {
-                font-size: 1rem;
-            }
+        .resource-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
-        @media (min-width: 900px) {
+        .cta-arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover .cta-arrow {
+            transform: translateX(5px);
+        }
+
+        .footer-info {
+            background: #f8f9fa;
+            padding: 25px 30px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .footer-info h3 {
+            color: #2a5298;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .tip-box strong {
+            color: #0c5460;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tip-box p {
+            color: #0c5460;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
             body {
-                padding: 20px;
+                padding: 10px;
             }
 
             .header {
-                padding: 40px 30px;
+                padding: 30px 15px;
             }
 
             .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .intro h2 {
+                font-size: 1.3rem;
+            }
+
+            .resource-card {
+                padding: 25px 20px;
+            }
+
+            .resource-icon {
                 font-size: 2.5rem;
             }
 
-            .level-section {
-                padding: 35px;
+            .resource-card h3 {
+                font-size: 1.2rem;
             }
 
-            .level-title h2 {
-                font-size: 1.6rem;
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-info {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 901px) {
+            .header h1 {
+                font-size: 2rem;
             }
 
             .resources-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .resource-card {
-                padding: 25px;
-            }
-
-            .resource-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            }
-
-            .resource-card:active {
-                transform: translateY(-2px);
-            }
-
-            .comparison-section {
-                padding: 30px 35px;
-            }
-
-            .comparison-section h2 {
-                font-size: 1.6rem;
             }
         }
     </style>
@@ -322,165 +306,85 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 City & Guilds 7290 Revision Hub</h1>
-            <p>Interactive Learning Resources for Vehicle Maintenance & Repair</p>
-            <p class="subtitle">Choose Your Level Below</p>
+            <h1>🎓 Unit 7290-151 Revision Hub</h1>
+            <p class="subtitle">Knowledge of Routine Light Vehicle Maintenance</p>
+            <span class="badge">Level 2 | City & Guilds</span>
         </div>
 
-        <!-- Level 1 Section -->
-        <div class="level-section level-1">
-            <div class="level-header">
-                <div class="level-badge level-1">LEVEL 1</div>
-                <div class="level-title">
-                    <h2>Basic Routine Vehicle Maintenance</h2>
-                    <p>Foundation Level | All Vehicle Systems</p>
-                </div>
-            </div>
-
-            <div class="unit-info">
-                <h3>📋 Unit 7290-727/777</h3>
-                <p><strong>Assessment:</strong> Assignment + Multiple Choice Test (Evolve)</p>
-                <p><strong>GLH:</strong> 90 hours</p>
-                <p><strong>Grading:</strong> Pass (65%) | Merit (75%) | Distinction (85%)</p>
-                <p style="margin-top: 10px;"><strong>What You'll Learn:</strong></p>
-                <ul>
-                    <li>Purpose of routine maintenance and safety procedures</li>
-                    <li>Petrol and diesel engine basics (four-stroke cycle)</li>
-                    <li>Lubrication and cooling systems</li>
-                    <li>Ignition and fuel systems (petrol & diesel)</li>
-                    <li>Clutches, gearboxes, and transmission</li>
-                    <li>Driveline, steering, and suspension systems</li>
-                    <li>Braking systems and wheels/tyres</li>
-                    <li>Electrical and electronic systems</li>
-                </ul>
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to Your Complete Revision Suite</h2>
+                <p>Everything you need to prepare for the Unit 7290-151 online assessment. Choose your learning path below to get started!</p>
             </div>
 
             <div class="resources-grid">
-                <a href="7290-727-777-revision-tool.html" class="resource-card">
-                    <div class="resource-icon">✅</div>
-                    <h3>Practice Quiz</h3>
-                    <p>40 interactive questions covering all 11 learning outcomes with instant feedback and detailed explanations</p>
-                </a>
-
-                <a href="7290-727-777-study-guide.html" class="resource-card">
-                    <div class="resource-icon">📚</div>
-                    <h3>Study Guide</h3>
-                    <p>Comprehensive guide with flashcards, system explanations, and quick reference materials for all topics</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- Level 2 Section -->
-        <div class="level-section">
-            <div class="level-header">
-                <div class="level-badge">LEVEL 2</div>
-                <div class="level-title">
-                    <h2>Routine Light Vehicle Maintenance</h2>
-                    <p>Intermediate Level | Detailed Procedures</p>
-                </div>
-            </div>
-
-            <div class="unit-info">
-                <h3>📋 Unit 7290-151</h3>
-                <p><strong>Assessment:</strong> Multiple Choice Test (Evolve)</p>
-                <p><strong>GLH:</strong> 20 hours</p>
-                <p><strong>Grading:</strong> Pass (65%) | Merit (75%) | Distinction (85%)</p>
-                <p style="margin-top: 10px;"><strong>What You'll Learn:</strong></p>
-                <ul>
-                    <li>Detailed routine maintenance procedures</li>
-                    <li>Legal requirements and warranty obligations</li>
-                    <li>Comprehensive inspection techniques</li>
-                    <li>Fluid checking and replacement procedures</li>
-                    <li>Filter inspection and replacement</li>
-                    <li>Brake, tyre, and lighting system checks</li>
-                    <li>Using diagnostic equipment and tools</li>
-                    <li>Documentation and record-keeping</li>
-                </ul>
-            </div>
-
-            <div class="resources-grid">
-                <a href="7290-151-revision-tool.html" class="resource-card">
-                    <div class="resource-icon">✅</div>
-                    <h3>Practice Quiz</h3>
-                    <p>40 focused questions on routine maintenance procedures with instant feedback and comprehensive explanations</p>
-                </a>
-
                 <a href="7290-151-study-guide.html" class="resource-card">
-                    <div class="resource-icon">📚</div>
+                    <span class="resource-icon">📚</span>
                     <h3>Study Guide</h3>
-                    <p>Complete guide with interactive flashcards, maintenance procedures, inspection checklists, and quick references</p>
+                    <p>Comprehensive learning resource with interactive flashcards, detailed procedures, and quick reference materials.</p>
+                    <ul>
+                        <li>28 interactive flashcards</li>
+                        <li>Step-by-step procedures</li>
+                        <li>Vehicle systems breakdown</li>
+                        <li>Safety & legal requirements</li>
+                        <li>Quick reference tables</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 600;">
+                        Start Learning <span class="cta-arrow">→</span>
+                    </p>
+                </a>
+
+                <a href="7290-151-revision-tool.html" class="resource-card">
+                    <span class="resource-icon">✏️</span>
+                    <h3>Practice Quiz</h3>
+                    <p>Test your knowledge with 30 multiple choice questions covering all assessment criteria with instant feedback.</p>
+                    <ul>
+                        <li>30 practice questions</li>
+                        <li>Instant feedback & explanations</li>
+                        <li>Progress tracking</li>
+                        <li>Graded results (Pass/Merit/Distinction)</li>
+                        <li>Detailed answer review</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 600;">
+                        Start Quiz <span class="cta-arrow">→</span>
+                    </p>
                 </a>
             </div>
         </div>
 
-        <!-- Comparison Section -->
-        <div class="comparison-section">
-            <h2>📊 Level 1 vs Level 2 - Quick Comparison</h2>
-            <div style="overflow-x: auto;">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Level 1 (7290-727/777)</th>
-                            <th>Level 2 (7290-151)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Focus</strong></td>
-                            <td>ALL vehicle systems basics</td>
-                            <td>Routine maintenance procedures</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Scope</strong></td>
-                            <td>Broad - 11 learning outcomes</td>
-                            <td>Focused - Maintenance specific</td>
-                        </tr>
-                        <tr>
-                            <td><strong>GLH</strong></td>
-                            <td>90 hours</td>
-                            <td>20 hours</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Assessment</strong></td>
-                            <td>Assignment + MCQ Test</td>
-                            <td>MCQ Test only</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Technical Depth</strong></td>
-                            <td>Foundational understanding</td>
-                            <td>Detailed procedures</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Best For</strong></td>
-                            <td>Entry-level learners</td>
-                            <td>Progression to apprenticeships</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="footer-info">
+            <h3>📋 Assessment Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Assessment Type</div>
+                    <div class="info-value">Multiple Choice Test</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Platform</div>
+                    <div class="info-value">Evolve</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Pass Grade</div>
+                    <div class="info-value">65%</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Merit Grade</div>
+                    <div class="info-value">75%</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Distinction Grade</div>
+                    <div class="info-value">85%</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">GLH</div>
+                    <div class="info-value">20 Hours</div>
+                </div>
             </div>
-        </div>
 
-        <!-- Tips Section -->
-        <div class="level-section">
-            <div class="tips-section">
-                <h3>💡 How to Use These Resources</h3>
-                <ul>
-                    <li><strong>Start with Study Guides:</strong> Read through the comprehensive guides first to understand concepts</li>
-                    <li><strong>Use Flashcards:</strong> Test yourself on key terms and definitions regularly</li>
-                    <li><strong>Practice with Quizzes:</strong> Take the practice tests multiple times until you consistently score 85%+</li>
-                    <li><strong>Review Mistakes:</strong> Pay special attention to questions you get wrong - read the explanations carefully</li>
-                    <li><strong>Study Offline:</strong> All resources work offline once loaded - perfect for studying anywhere</li>
-                    <li><strong>Regular Practice:</strong> Short, frequent study sessions are more effective than long cramming sessions</li>
-                    <li><strong>Understand, Don't Memorize:</strong> Focus on understanding WHY things work, not just WHAT they're called</li>
-                </ul>
+            <div class="tip-box">
+                <strong>💡 Recommended Study Approach</strong>
+                <p>1. Start with the Study Guide to learn key concepts and procedures. 2. Use flashcards to memorize important terms. 3. Take the Practice Quiz to test your knowledge. 4. Review any weak areas in the Study Guide. 5. Retake the quiz until you consistently score 85%+</p>
             </div>
-        </div>
-
-        <div class="footer">
-            <p><strong>Good luck with your studies!</strong></p>
-            <p>These resources are designed to help you succeed in your City & Guilds assessments.</p>
-            <p style="margin-top: 10px; font-size: 0.85rem;">💪 Remember: Consistent practice leads to success!</p>
         </div>
     </div>
 </body>
