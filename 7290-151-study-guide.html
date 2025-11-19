@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -490,6 +491,207 @@
             border-bottom: none;
         }
 
+        /* Game Mode Styles */
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-height: 600px;
+        }
+
+        .game-stats {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-box h4 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-box .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .game-card {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+            touch-action: manipulation;
+            margin: 30px 0;
+        }
+
+        .game-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .game-card.flipped .game-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .game-card-front, .game-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .game-card-front {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.4;
+        }
+
+        .game-card-back {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            transform: rotateY(180deg);
+            font-size: 1.1rem;
+            color: #2c3e50;
+            overflow-y: auto;
+            border: 3px solid #667eea;
+        }
+
+        .game-hint {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            touch-action: manipulation;
+            min-width: 150px;
+        }
+
+        .game-btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .game-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .game-btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .game-btn-secondary {
+            background: #f8f9fa;
+            color: #2a5298;
+            border: 2px solid #667eea;
+        }
+
+        .game-btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        .flip-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-card-front .flip-indicator {
+            content: "Click to reveal";
+        }
+
+        .game-card:hover .flip-indicator {
+            opacity: 1;
+        }
+
+        .game-intro {
+            background: linear-gradient(135deg, #d1ecf1 0%, #b8e6ef 100%);
+            border: 2px solid #667eea;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .game-intro h3 {
+            color: #0c5460;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .game-intro p {
+            color: #0c5460;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .game-intro ul {
+            text-align: left;
+            margin: 15px auto;
+            max-width: 400px;
+            margin-left: 20px;
+        }
+
+        .game-intro li {
+            color: #0c5460;
+            margin-bottom: 8px;
+        }
+
         /* Tablet Styles (min-width: 600px) */
         @media (min-width: 600px) {
             body {
@@ -528,6 +730,22 @@
 
             .nav-tab {
                 padding: 15px 20px;
+            }
+
+            .game-card {
+                height: 400px;
+            }
+
+            .game-card-front {
+                font-size: 2rem;
+            }
+
+            .game-card-back {
+                font-size: 1.15rem;
+            }
+
+            .game-stats {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -591,12 +809,34 @@
             table {
                 min-width: 100%;
             }
+
+            .game-card {
+                height: 450px;
+            }
+
+            .game-card-front {
+                font-size: 2.2rem;
+            }
+
+            .game-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         /* Large Desktop (min-width: 1200px) */
         @media (min-width: 1200px) {
             .flashcard-container {
                 grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-height: 800px) {
+            .game-card {
+                height: 300px;
+            }
+
+            .game-card-front {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -610,6 +850,7 @@
 
         <div class="nav-tabs">
             <button class="nav-tab active" onclick="showTab('overview')">📋 Overview</button>
+            <button class="nav-tab" onclick="showTab('game')">🎮 Game Mode</button>
             <button class="nav-tab" onclick="showTab('flashcards')">🎴 Flashcards</button>
             <button class="nav-tab" onclick="showTab('procedures')">🔧 Procedures</button>
             <button class="nav-tab" onclick="showTab('systems')">⚙️ Systems</button>
@@ -675,6 +916,68 @@
                 <div class="tip-box">
                     <strong>💡 Study Tips</strong>
                     <p>Use all sections of this guide alongside the practice quiz. Start with flashcards to learn key terms, then study the procedures and systems in detail. Refer to the quick reference section for fast revision before your assessment.</p>
+                </div>
+            </div>
+
+            <!-- Game Mode Tab -->
+            <div id="game" class="tab-content">
+                <h2 class="section-header">🎮 Game Mode - Test Yourself!</h2>
+                
+                <div class="game-intro">
+                    <h3>Welcome to Flashcard Game Mode!</h3>
+                    <p><strong>Perfect for:</strong> Solo study, pair work, team challenges, or classroom presentations</p>
+                    <ul>
+                        <li>📌 <strong>Solo:</strong> Test yourself randomly until you master all terms</li>
+                        <li>👥 <strong>Pairs/Teams:</strong> One person reads the card, others answer, then flip to check</li>
+                        <li>👨‍🏫 <strong>Teachers:</strong> Project on board for whole-class quizzing</li>
+                    </ul>
+                </div>
+
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <h4>Questions</h4>
+                        <div class="stat-value" id="totalQuestions">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Current</h4>
+                        <div class="stat-value" id="currentNumber">-</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Tested</h4>
+                        <div class="stat-value" id="testedCount">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Ready?</h4>
+                        <div class="stat-value" id="readyStatus">✓</div>
+                    </div>
+                </div>
+
+                <div class="game-hint" id="gameHint">Click "Start Game" to begin, then reveal answers by clicking the card</div>
+
+                <div id="gameCardContainer" style="display: none; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <div class="game-card" id="gameCard" onclick="flipGameCard()">
+                        <div class="game-card-inner">
+                            <div class="game-card-front">
+                                <div>
+                                    <div style="font-size: 0.6em; opacity: 0.7; margin-bottom: 15px;">← CLICK TO REVEAL ANSWER →</div>
+                                    <div id="gameCardTerm"></div>
+                                </div>
+                            </div>
+                            <div class="game-card-back">
+                                <div id="gameCardDefinition"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-controls">
+                        <button class="game-btn game-btn-secondary" onclick="resetCard()">← Back</button>
+                        <button class="game-btn game-btn-primary" onclick="nextCard()">Next Card →</button>
+                    </div>
+                </div>
+
+                <div class="game-controls" id="gameStartContainer">
+                    <button class="game-btn game-btn-primary" onclick="startGame()">🎮 Start Game</button>
+                    <button class="game-btn game-btn-secondary" onclick="showTab('flashcards')">📋 Study Mode</button>
                 </div>
             </div>
 
@@ -1369,6 +1672,12 @@
             }
         ];
 
+        // Game Mode Variables
+        let gameActive = false;
+        let currentCardIndex = -1;
+        let usedCards = [];
+        let testedCount = 0;
+
         // Initialize flashcards
         function initializeFlashcards() {
             const container = document.getElementById('flashcardContainer');
@@ -1388,6 +1697,11 @@
                 flashcardDiv.onclick = () => flashcardDiv.classList.toggle('flipped');
                 container.appendChild(flashcardDiv);
             });
+        }
+
+        // Initialize Game Mode
+        function initializeGameMode() {
+            document.getElementById('totalQuestions').textContent = flashcards.length;
         }
 
         // Filter flashcards based on search
@@ -1444,9 +1758,86 @@
             }
         }
 
+        // Flip Game Card
+        function flipGameCard() {
+            const gameCard = document.getElementById('gameCard');
+            gameCard.classList.toggle('flipped');
+        }
+
+        // Start Game
+        function startGame() {
+            gameActive = true;
+            usedCards = [];
+            testedCount = 0;
+            document.getElementById('gameStartContainer').style.display = 'none';
+            document.getElementById('gameCardContainer').style.display = 'flex';
+            document.getElementById('gameHint').textContent = '🎯 Read the question and try to answer before clicking the card!';
+            nextCard();
+        }
+
+        // Get Random Card
+        function getRandomCard() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * flashcards.length);
+            } while (usedCards.includes(randomIndex) && usedCards.length < flashcards.length);
+            
+            return randomIndex;
+        }
+
+        // Load Next Card
+        function nextCard() {
+            if (!gameActive) return;
+
+            // Mark previous card as tested
+            if (currentCardIndex !== -1 && !usedCards.includes(currentCardIndex)) {
+                usedCards.push(currentCardIndex);
+                testedCount++;
+            }
+
+            // Reset flip state
+            const gameCard = document.getElementById('gameCard');
+            gameCard.classList.remove('flipped');
+
+            // Get new card
+            currentCardIndex = getRandomCard();
+            const card = flashcards[currentCardIndex];
+
+            // Update card content
+            document.getElementById('gameCardTerm').textContent = card.term;
+            document.getElementById('gameCardDefinition').textContent = card.definition;
+
+            // Update stats
+            document.getElementById('currentNumber').textContent = currentCardIndex + 1;
+            document.getElementById('testedCount').textContent = testedCount;
+
+            // Check if all cards tested
+            if (usedCards.length === flashcards.length) {
+                document.getElementById('readyStatus').textContent = '🏆';
+                document.getElementById('gameHint').textContent = '🎉 Amazing! You\'ve tested all ' + flashcards.length + ' cards! Click "Next Card" to shuffle and try again!';
+                usedCards = [];
+                testedCount = 0;
+            }
+        }
+
+        // Reset Card to Front
+        function resetCard() {
+            const gameCard = document.getElementById('gameCard');
+            gameCard.classList.remove('flipped');
+        }
+
+        // End Game
+        function endGame() {
+            gameActive = false;
+            document.getElementById('gameCardContainer').style.display = 'none';
+            document.getElementById('gameStartContainer').style.display = 'flex';
+            document.getElementById('readyStatus').textContent = '✓';
+        }
+
         // Initialize on page load
         window.onload = function() {
             initializeFlashcards();
+            initializeGameMode();
         };
     </script>
 </body>
