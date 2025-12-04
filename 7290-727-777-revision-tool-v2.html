@@ -564,7 +564,7 @@
                     <div class="stat-label">Current Question</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value" id="totalQuestions">40</div>
+                    <div class="stat-value" id="totalQuestions">70</div>
                     <div class="stat-label">Total Questions</div>
                 </div>
                 <div class="stat">
@@ -587,9 +587,10 @@
                     
                     <h3 style="margin-top: 20px; margin-bottom: 10px;">What to Expect:</h3>
                     <ul>
-                        <li><strong>40 practice questions</strong> covering all 11 learning outcomes</li>
-                        <li>Questions on engines, lubrication, cooling, fuel systems</li>
-                        <li>Transmission, steering, suspension topics</li>
+                        <li><strong>70 practice questions</strong> covering all 11 learning outcomes</li>
+                        <li>40 comprehensive learning questions on engines, lubrication, cooling, fuel systems</li>
+                        <li>30 test-focused practice questions aligned with the actual test content</li>
+                        <li>Questions on transmission, steering, suspension topics</li>
                         <li>Braking systems, wheels & tyres, electrical systems</li>
                         <li>Immediate feedback after each answer</li>
                         <li>Detailed explanations for learning</li>
@@ -1439,11 +1440,343 @@
                 ],
                 correct: 1,
                 explanation: "The Engine Control Unit (ECU) electronically controls fuel injection, ignition timing, emissions systems, and other engine functions based on sensor inputs."
+            },
+
+            // 30 Test-Focused Practice Questions
+            {
+                question: "The basic principle of a manual transmission clutch is that it must be able to?",
+                options: [
+                    "Transmit maximum torque with slippage",
+                    "Transmit maximum torque without slippage",
+                    "Act as a torque multiplier",
+                    "Vary the speed of the vehicle"
+                ],
+                correct: 1,
+                explanation: "The clutch must transmit engine torque to the gearbox WITHOUT slippage under normal driving conditions. This is its primary function."
+            },
+            {
+                question: "A service check on a clutch disengagement operation requires which one of the following?",
+                options: [
+                    "The ability to select reverse with the engine off",
+                    "The ability to select all gears with the engine idling",
+                    "The ability to select all gears smoothly at maximum engine revs",
+                    "The ability to start the car in any gear without depressing the clutch"
+                ],
+                correct: 1,
+                explanation: "A properly functioning clutch allows smooth gear selection when the engine is running at idle speed. This tests clutch engagement smoothly."
+            },
+            {
+                question: "How many output shafts does a front engine rear wheel drive vehicle have?",
+                options: [
+                    "1",
+                    "2",
+                    "3",
+                    "None"
+                ],
+                correct: 0,
+                explanation: "Front-engine, rear-wheel-drive vehicles have ONE output shaft (the propeller shaft) from the gearbox to the rear axle/differential."
+            },
+            {
+                question: "During a basic service, the gearbox is found to be completely empty of oil. What is the correct course of action?",
+                options: [
+                    "Top up the gearbox",
+                    "Top up the gearbox and report the findings",
+                    "Leave it alone",
+                    "Report the findings before topping up"
+                ],
+                correct: 3,
+                explanation: "A completely empty gearbox indicates serious mechanical failure. ALWAYS report findings to supervisor BEFORE topping up oil."
+            },
+            {
+                question: "During inspection you observe a defect on a CV joint. You will report?",
+                options: [
+                    "Worn track-rod ends",
+                    "A split prop-shaft coupling",
+                    "A split CV joint gator",
+                    "A cracked final drive"
+                ],
+                correct: 2,
+                explanation: "Split CV joint gaiters (boots) are VERY COMMON findings during inspection. They allow grease to escape and dirt/water to enter the joint."
+            },
+            {
+                question: "A steering mechanism will include some form of?",
+                options: [
+                    "Swivel joints",
+                    "ABS sensors",
+                    "Hydraulic levelling system",
+                    "Suspension dampers"
+                ],
+                correct: 0,
+                explanation: "Steering mechanisms include swivel joints (ball joints or king pins) that enable wheels to turn left/right while still receiving engine power."
+            },
+            {
+                question: "A basic service inspection operation on vehicle components will involve?",
+                options: [
+                    "Checking for wear and splits",
+                    "Lengthening & shortening",
+                    "Fitting new locking devices",
+                    "Topping up with fluid"
+                ],
+                correct: 0,
+                explanation: "Basic service inspections focus on VISUAL CHECKS for wear, damage, splits, corrosion, and loose components. This is the foundation of maintenance."
+            },
+            {
+                question: "Which of the following are types of metal spring?",
+                options: [
+                    "Torsion, rubber & leaf",
+                    "Coil, leaf & torsion",
+                    "Rubber, leaf & coil",
+                    "Gas, leaf & coil"
+                ],
+                correct: 1,
+                explanation: "The three main types of metal springs are: 1) Coil springs, 2) Leaf springs, 3) Torsion bars. You MUST know all three for the test."
+            },
+            {
+                question: "The letters TWI on the shoulders of a tyre are used to highlight?",
+                options: [
+                    "Torque wrench index",
+                    "Temperature when inflated",
+                    "Tyre & wheel index",
+                    "Tread wear indicators"
+                ],
+                correct: 3,
+                explanation: "TWI (Tread Wear Indicators) are raised bars in tyre grooves showing the LEGAL MINIMUM tread depth (1.6mm). When tyre wears to TWI level, it's at legal limit."
+            },
+            {
+                question: "Under-inflated tyres can be identified when?",
+                options: [
+                    "Reduced vehicle trim height",
+                    "Premature wear on both inner and outer edges",
+                    "Premature wear on both outer edges",
+                    "Premature wear in the middle of the tread"
+                ],
+                correct: 1,
+                explanation: "Under-inflated tyres flex excessively at the sidewalls, causing PREMATURE WEAR on BOTH the inner AND outer edges of the tread."
+            },
+            {
+                question: "A hydraulic braking system will include a?",
+                options: [
+                    "Slave cylinder only",
+                    "Master cylinder only",
+                    "Slave and caliper cylinders",
+                    "Slave and master cylinders"
+                ],
+                correct: 3,
+                explanation: "Hydraulic braking systems require BOTH: Master cylinder (creates pressure) AND Slave cylinders at each wheel (applies brakes). Both are essential."
+            },
+            {
+                question: "One basic check made on the front and rear brake disc pads is?",
+                options: [
+                    "Visual brake lining wear",
+                    "Brake disc run-out",
+                    "Roller brake efficiency test",
+                    "Brake drum wear"
+                ],
+                correct: 0,
+                explanation: "The most basic brake pad check is VISUAL INSPECTION—look directly at the friction material thickness. No special tools needed initially."
+            },
+            {
+                question: "A starter motor converts?",
+                options: [
+                    "Mechanical energy into chemical energy",
+                    "Chemical energy into mechanical energy",
+                    "Electrical energy into mechanical energy",
+                    "Mechanical energy into electrical energy"
+                ],
+                correct: 2,
+                explanation: "Starter motors convert ELECTRICAL energy (from battery) into MECHANICAL energy (rotating motion) to crank the engine."
+            },
+            {
+                question: "What does the worn belt image show?",
+                options: [
+                    "A worn cam belt",
+                    "A split alternator pulley",
+                    "A worn alternator drive belt",
+                    "A worn starter motor drive belt"
+                ],
+                correct: 2,
+                explanation: "Worn auxiliary/serpentine drive belts (alternator belts) are a COMMON finding. Look for cracks, fraying, or glazing indicating replacement needed."
+            },
+            {
+                question: "A side light bulb is normally rated at?",
+                options: [
+                    "2.1 watts",
+                    "5 watts",
+                    "21 watts",
+                    "55 watts"
+                ],
+                correct: 1,
+                explanation: "Parking/side light bulbs are typically rated at 5 WATTS. Know this specification for the test."
+            },
+            {
+                question: "What is the component shown in the image?",
+                options: [
+                    "Rain sensor",
+                    "Automatic headlamp sensor",
+                    "Small battery",
+                    "Light emitting diode bulb"
+                ],
+                correct: 1,
+                explanation: "The automatic headlamp sensor detects ambient light levels and triggers lights automatically in dark conditions."
+            },
+            {
+                question: "Which one of the following substances requires the most protection to prevent coming into contact with the vehicle bodywork?",
+                options: [
+                    "Engine coolant",
+                    "DOT-4 brake fluid",
+                    "Engine oil",
+                    "De-ionised water"
+                ],
+                correct: 1,
+                explanation: "DOT-4 brake fluid is HIGHLY CORROSIVE to paint and bodywork. Immediate protection and cleaning required if spilled."
+            },
+            {
+                question: "A clutch release bearing pushes on the?",
+                options: [
+                    "Gearbox input shaft",
+                    "Diaphragm spring",
+                    "Centre plate",
+                    "Flywheel"
+                ],
+                correct: 1,
+                explanation: "The clutch release bearing pushes on the DIAPHRAGM SPRING (not pressure plate directly) to disengage the clutch."
+            },
+            {
+                question: "A missing clutch master cylinder cap will allow??",
+                options: [
+                    "Moisture to ingress in the clutch fluid",
+                    "The clutch fluid to evaporate",
+                    "The plastic reservoir to corrode",
+                    "Rapid wear of the clutch drive plate"
+                ],
+                correct: 0,
+                explanation: "Brake fluid is HYGROSCOPIC (absorbs moisture). Missing cap allows moisture ingress, reducing performance and causing corrosion."
+            },
+            {
+                question: "For safety reasons, what gear should be selected when starting a vehicle with an automatic gearbox?",
+                options: [
+                    "P - Park",
+                    "R - Reverse",
+                    "N - Neutral",
+                    "D - Drive"
+                ],
+                correct: 0,
+                explanation: "Automatic vehicles MUST be started in Park (P) position to prevent unexpected vehicle movement during starting."
+            },
+            {
+                question: "A final drive on a front engine rear wheel drive normally houses a??",
+                options: [
+                    "Differential",
+                    "Pinion & Differential",
+                    "Crown-wheel & Differential",
+                    "Pinion, Crown-wheel & Differential"
+                ],
+                correct: 3,
+                explanation: "Final drive contains THREE components: Pinion gear, Crown wheel (ring gear), and Differential—all essential for power distribution."
+            },
+            {
+                question: "A basic service task when the vehicle is raised with road wheels suspended is to check for??",
+                options: [
+                    "Excessive noise from the wheel swivel bearings",
+                    "Excessive noise & play in the wheel bearings",
+                    "Run-out with a (DTI) clock gauge on the tyre side walls",
+                    "Run-out with a (DTI) clock gauge on the wheel rim"
+                ],
+                correct: 1,
+                explanation: "With wheel suspended, technicians check for bearing noise and play by rotating wheel and rocking to check for looseness."
+            },
+            {
+                question: "Two devices that are likely to be found on the steering wheel are??",
+                options: [
+                    "RSR & horn switch",
+                    "SRS & horn switch",
+                    "SRS & indicator switch",
+                    "RSR & indicator switch"
+                ],
+                correct: 1,
+                explanation: "Steering wheels typically contain: SRS (airbag/Supplemental Restraint System) and Horn switch."
+            },
+            {
+                question: "Where can a technician find a lot of information about the steering system alignment & performance?",
+                options: [
+                    "Dash board warning lights",
+                    "Steering wheel",
+                    "Wheels",
+                    "Tyres"
+                ],
+                correct: 3,
+                explanation: "Tyre wear patterns reveal valuable information about STEERING ALIGNMENT and SUSPENSION FAULTS. Always inspect tyres during service."
+            },
+            {
+                question: "The purpose of a suspension damper is to??",
+                options: [
+                    "Absorb road shocks",
+                    "Reduce friction in the springs",
+                    "Insulate the body from any road noise",
+                    "Convert spring energy into heat"
+                ],
+                correct: 3,
+                explanation: "Shock absorbers (dampers) convert SPRING OSCILLATION (kinetic energy) into HEAT, controlling bounce and keeping tyres on road."
+            },
+            {
+                question: "A basic suspension service check will involve??",
+                options: [
+                    "Suspension alignment check",
+                    "Vehicle height and level",
+                    "Suspension spring length",
+                    "Electronic analysis"
+                ],
+                correct: 1,
+                explanation: "Basic suspension service includes measuring vehicle height and ensuring level side-to-side. Uneven ride height indicates suspension fault."
+            },
+            {
+                question: "The type of tyre shown has its plies running at 90° to the tread. It is known as??",
+                options: [
+                    "Tube-ply",
+                    "Cross-ply",
+                    "Radial-ply",
+                    "Bias belted-ply"
+                ],
+                correct: 2,
+                explanation: "Modern standard tyres are RADIAL-PLY with plies running at 90° (perpendicular) to the tread direction. Better performance than cross-ply."
+            },
+            {
+                question: "A braking system converts??",
+                options: [
+                    "Heat energy into movement",
+                    "Kinetic energy into heat energy",
+                    "Heat energy into kinetic energy",
+                    "Rotary energy into kinetic energy"
+                ],
+                correct: 1,
+                explanation: "Braking systems convert vehicle KINETIC ENERGY (motion) into HEAT ENERGY (through friction of brake pads/shoes on discs/drums)."
+            },
+            {
+                question: "The most suitable method of measuring a brake disc would be to use a??",
+                options: [
+                    "Clock gauge (DTI)",
+                    "Vernier caliper",
+                    "Micrometer",
+                    "Caliper and a rule"
+                ],
+                correct: 2,
+                explanation: "MICROMETER provides the precision needed to accurately measure brake disc thickness for safety-critical component inspection."
+            },
+            {
+                question: "The figure shown is of a starter motor in position to drive??",
+                options: [
+                    "A pinion with a ring gear",
+                    "Directly onto the flywheel",
+                    "The ring gear with a pinion",
+                    "Directly onto the clutch assembly"
+                ],
+                correct: 2,
+                explanation: "Starter motor pinion engages the RING GEAR on the flywheel to crank the engine. Pinion must mesh correctly with ring gear."
             }
         ];
 
-        // Shuffle questions and select 40
-        const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 40);
+        // Shuffle questions and select 50-70 random questions each session
+        const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, Math.floor(Math.random() * 21) + 50);
         let currentQuestionIndex = 0;
         let correctCount = 0;
         let incorrectCount = 0;
